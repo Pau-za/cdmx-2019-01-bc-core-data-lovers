@@ -13,8 +13,8 @@ indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indica
 
 //función que imprime nombres de los indicadores en el select
 const print = (indicatorName, indicatorCode) => {
-  let result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
-    indicator.insertAdjacentHTML('beforeend', result);
+  const result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
+  indicator.insertAdjacentHTML('beforeend', result);
 }
 
 
@@ -24,7 +24,7 @@ let indicatorCode = '';
 
 for(let i = 0; i<elements.length; i++){
   elements[i].addEventListener('click', () => {
-    document.getElementById('indicator').innerHTML = '';
+  //  indicator.innerHTML = '';
     let valElement = elements[i].value;
     window.worldBank.filter(dataMex, valElement);
     filteredIndicators.forEach(element => {
@@ -38,23 +38,62 @@ for(let i = 0; i<elements.length; i++){
 
 
 //función para imprimir datos de variable en el html
+const table = document.getElementById('indicator-table');
 indicator.addEventListener("change", ()=> {
   document.getElementById('indicator-name').innerHTML = '';
-  document.getElementById('indicator-result').innerHTML='';
+  table.innerHTML='';
   let indicatorSelect = indicator.value;
   filteredIndicators.forEach( element => {
-    if(element.indicatorCode == indicatorSelect){
+    if(element.indicatorCode === indicatorSelect){
       let indicatorName = element.indicatorName;
       let year = element.data;
-      console.log(element.data);
       for (let data in year) {
-        indicatorResult = `<ol>${data} = ${year[data]}</ol>`;
+        indicatorYear = `<td>${data}</td>`;
+        indicatorData = `<td>${year[data]}<td>`;
+        // indicatorResult = `<ol>${data} = ${year[data]}</ol>`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
-        document.getElementById('indicator-result').insertAdjacentHTML('beforeend', indicatorResult);
+        // document.getElementById('indicator-result').insertAdjacentHTML('beforeend', indicatorResult);
+        const row = table.insertRow(0);
+        const cellYear = row.insertCell(0);
+        const cellData = row.insertCell(1);
+        cellYear.insertAdjacentHTML('beforeend', indicatorYear);
+        cellData.insertAdjacentHTML('beforeend', indicatorData);
       }
     }
   })
 })
+
+//botones del nav
+const whoAreWe = document.getElementById('who-are-we');
+const whatWeDo = document.getElementById('what-we-do');
+const contact = document.getElementById('contact');
+
+//information ids
+const informationOne = document.getElementById('information-1');
+const informationTwo = document.getElementById('information-2');
+const informationThree = document.getElementById('information-3');
+
+//eventos de botones del nav
+whoAreWe.addEventListener('click', () => {
+  informationOne.style.display='block';
+  informationTwo.style.display = 'none';
+  informationThree.style.display = 'none';
+})
+
+whatWeDo.addEventListener('click', () => {
+  informationTwo.style.display='block';
+  informationOne.style.display = 'none';
+  informationThree.style.display = 'none';
+})
+
+contact.addEventListener('click', () => {
+  informationThree.style.display='block';
+  informationOne.style.display = 'none';
+  informationTwo.style.display = 'none';
+})
+
+
+
 
 //evento de click
 // const typeIndicator = () => {
