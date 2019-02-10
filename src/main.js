@@ -22,9 +22,10 @@ const print = (indicatorName, indicatorCode) => {
 let indicatorName = '';
 let indicatorCode = '';
 
-for(let i = 0; i<elements.length; i++){
+for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
-  //  indicator.innerHTML = '';
+    document.getElementById('indicator').innerHTML = '';
+    document.getElementById('indicator').style.display = 'block';
     let valElement = elements[i].value;
     window.worldBank.filter(dataMex, valElement);
     filteredIndicators.forEach(element => {
@@ -112,7 +113,7 @@ contact.addEventListener('click', () => {
 //   let indicatorCode = element.indicatorCode;
 //   print(indicatorName, indicatorCode);
 //   })
-  
+
 // })
 
 

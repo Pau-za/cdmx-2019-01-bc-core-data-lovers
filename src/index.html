@@ -3,15 +3,27 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
+  
 </head>
 
 <!-----PAGE1----->
 
 <body id="general">
 
+
+  <main id="main-1">
+    <header class="center" id="header">
+      <figure id=logo class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
+      <figure id="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
+      <input type="butonHeader" value="¿Quiénes somos?" id="butonHeader" class="butonHeader">
+      <input type="butonHeader" value="¿Qué hacemos?" id="butonHeader" class="butonHeader">
+      <input type="butonHeader" value="Contacto" id="butonHeader" class="butonHeader">
+
+    </header>
 
   <section id="section-1">
     <header class="center" id="header">
@@ -20,36 +32,49 @@
       <nav id=bar class=bar><img src="./imagenes/navegador.jpg">
       
       </nav>
-      <div id = "menu">
+     /* <div id = "menu">
           <button id="who-are-we" class="info-button" href = "#information-1">¿Quiénes somos?</button>
           <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
           <button id="contact" class="info-button">Contacto</button>
-        </div>
+        </div> */
     </header>
     <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/imgEstudiantes.jpg"> </figure>
+
     <article class="tableIndicator">
       <h2>País: México</h2>
       <p>Elige el indicador que deseas explorar</p>
-      <h3>Educativo</h3>
+      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
+      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
+      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
+      <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
+
       <button class="elements" id="education" value="educación"> Educación
       </button>
-      <h3>Laboral</h3>
+
       <button class="elements" id="laboral" value="laboral"> Laboral
       </button>
-      <h3>Demográfico</h3>
+
       <button class="elements" id="demographic" value="población"> Demográfico </button>
+      <br>
+      <section id="section-1">
+        <select id="indicator"> </select>
+      </section>
+
       <select id="indicator"> </select>
+
     </article>
-  </section>
+  </main>
 
   <!----Page 2--->
   <section id="section-2">
+
     <header>
       <figure id="image-logo"><img src="./imagenes/Logo completo vertical.jpg" alt=""></figure>
+
       <h1>Indicador</h1>
-    </header>
     <article>
       <h2 id="indicator-name"></h2>
+
       <table id="indicator-table">
          <tr>
         <!--  <td>Año</td>
@@ -59,7 +84,7 @@
       </table>
       <p id="indicator-result"></p>
     </article>
-    <button class="button" id="startButton">Volver a inicio</button>
+    <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
 
   </section>
 
