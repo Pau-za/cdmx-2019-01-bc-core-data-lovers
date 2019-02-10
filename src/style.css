@@ -26,7 +26,7 @@
    display: inline-block;
    margin: -1%;
    background-color: #FCA7D0;
-   color: #091722;
+   color: #091722
 }
 
 .bar {
@@ -108,3 +108,17 @@ h1 {
      @media only screen and (min-width: 1200px) {
         
      }
+*/
+
+table {
+   border-collapse: collapse;
+   width: 50%;
+   margin: 5% 25% 5% 25%;
+}
+
+td {
+   border: 0.1em solid #3531310e;
+   text-align: left;
+   padding: 8px;
+   text-align: center;
+ }

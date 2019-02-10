@@ -13,8 +13,8 @@ indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indica
 
 //función que imprime nombres de los indicadores en el select
 const print = (indicatorName, indicatorCode) => {
-  let result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
-    indicator.insertAdjacentHTML('beforeend', result);
+  const result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
+  indicator.insertAdjacentHTML('beforeend', result);
 }
 
 
@@ -24,7 +24,7 @@ let indicatorCode = '';
 
 for(let i = 0; i<elements.length; i++){
   elements[i].addEventListener('click', () => {
-    document.getElementById('indicator').innerHTML = '';
+  //  indicator.innerHTML = '';
     let valElement = elements[i].value;
     window.worldBank.filter(dataMex, valElement);
     filteredIndicators.forEach(element => {
@@ -41,13 +41,12 @@ for(let i = 0; i<elements.length; i++){
 const table = document.getElementById('indicator-table');
 indicator.addEventListener("change", ()=> {
   document.getElementById('indicator-name').innerHTML = '';
-  document.getElementById('indicator-result').innerHTML='';
+  table.innerHTML='';
   let indicatorSelect = indicator.value;
   filteredIndicators.forEach( element => {
-    if(element.indicatorCode == indicatorSelect){
+    if(element.indicatorCode === indicatorSelect){
       let indicatorName = element.indicatorName;
       let year = element.data;
-      console.log(element.data);
       for (let data in year) {
         indicatorYear = `<td>${data}</td>`;
         indicatorData = `<td>${year[data]}<td>`;
@@ -57,8 +56,8 @@ indicator.addEventListener("change", ()=> {
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
-        cellYear.insertAdjacentHTML('beforebegin', indicatorYear);
-        cellData.insertAdjacentHTML('beforebegin', indicatorData);
+        cellYear.insertAdjacentHTML('beforeend', indicatorYear);
+        cellData.insertAdjacentHTML('beforeend', indicatorData);
       }
     }
   })
