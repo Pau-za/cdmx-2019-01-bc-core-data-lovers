@@ -11,18 +11,22 @@
 <!-----PAGE1----->
 
 <body id="general">
-  
-  
+
+
   <section id="section-1">
-      <header class="center" id="header">
-          <figure id=logo class="logo"><img  src="./imagenes/Loco completo.jpg" ></figure>
-          <nav id=bar class= bar><img src="./imagenes/navegador.jpg"></nav>
-         <button id="¿Quiénes somos?" class="header">¿Quiénes somos?</button>
-          <button id="¿Qué hacemos?" class="header">¿Qué hacemos?</button>
-          <button id="Contacto" class="header">Contacto</button>
+    <header class="center" id="header">
         
-        </header>
-    <figure id="mainFigure" class="mainFigure"> <img src= "./imagenes/imgEstudiantes.jpg" > </figure>
+      <figure id=logo class="logo"><img src="./imagenes/Loco completo.jpg"></figure>
+      <nav id=bar class=bar><img src="./imagenes/navegador.jpg">
+      
+      </nav>
+      <div id = "menu">
+          <button id="who-are-we" class="info-button" href = "#information-1">¿Quiénes somos?</button>
+          <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
+          <button id="contact" class="info-button">Contacto</button>
+        </div>
+    </header>
+    <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/imgEstudiantes.jpg"> </figure>
     <article class="tableIndicator">
       <h2>País: México</h2>
       <p>Elige el indicador que deseas explorar</p>
@@ -34,23 +38,67 @@
       </button>
       <h3>Demográfico</h3>
       <button class="elements" id="demographic" value="población"> Demográfico </button>
-     <select id="indicator">  </select>
+      <select id="indicator"> </select>
     </article>
   </section>
 
   <!----Page 2--->
-  <section   id="section-2">
+  <section id="section-2">
     <header>
       <figure id="image-logo"><img src="./imagenes/Logo completo vertical.jpg" alt=""></figure>
       <h1>Indicador</h1>
     </header>
     <article>
       <h2 id="indicator-name"></h2>
-      <p  id="indicator-result"></p>
+      <table id="indicator-table">
+        <tr>
+          <td>Año</td>
+          <td>Valor</td>
+        </tr>
+        <tr id="data">
+          <td id="year"></td>
+          <td id="value"></td>
+        </tr>
+      </table>
+      <p id="indicator-result"></p>
     </article>
     <button class="button" id="startButton">Volver a inicio</button>
 
   </section>
+
+  <!--Page 3 Information-->
+  <section class="general-information" id="information-1">
+    <div>
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos dos estudiantes de Laboratoria que están interesadas en aprender a programar en Java Script 
+        para desarrollar páginas web. Nos interesan los proyectos sociales, ya que estamos convencidas de que 
+        la tecnología puede contribuir a generar impactos positivos en la sociedad.
+        <br>
+        Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan 
+        con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a> 
+        para facilitar las investigaciones relacionadas con las mujeres en América Latina.
+      </p>
+    </div>    
+  </section>
+
+  <section class="general-information" id="information-2">
+  <div>
+    <h2>¿Qué hacemos?</h2>
+    <p>Desarrollamos páginas web para formar nuevas maneras de interactuar con la sociedad. 
+
+    </p>
+  </div>
+</section>
+
+<section class="general-information" id="information-3">
+  <h2>Contacto</h2>
+  <p>Si estás interesad@ en contactarnos, puedes enviarnos un correo electrónico: 
+    <br>
+    Paulina: <a href="mailto:molo_pau@hotmail.com">molo_pau@hotmail.com </a>
+    <br>
+    Andrea: <a href="">(correo)</a>
+  </p>
+</section>
 
   <!--FOOTER-->
   <footer id="footer"></footer>
