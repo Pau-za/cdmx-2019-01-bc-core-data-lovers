@@ -6,10 +6,6 @@ body {
   text-align: center;
 }
 
-.hide {
-  display: none;
-}
-
 img {
   height: auto;
   max-width: 100%;
@@ -20,9 +16,9 @@ figure {
 }
 
 
-.tableIndicator {
+/* .tableIndicator {
   margin: 3%;
-}
+} */
 
 section {
   font-family: 'Montserrat', sans-serif;
@@ -33,7 +29,6 @@ section {
 
 #section-1 {
   margin: 0;
-  margin-left: 18%;
   text-align: center;
 }
 
@@ -57,17 +52,21 @@ h1 {
 
 #section-2 {
   display: none;
-}
+} 
 
 .indicator-result {
   text-align: center;
   font-size: .2em
 }
 
-#table {
+/* #table {
   margin-left: auto;
   margin-right: auto;
   padding: .6%;
+} */
+
+.general-information {
+   display: none;
 }
 
 ol {
@@ -88,6 +87,21 @@ ol {
   font-family: 'Montserrat', sans-serif;
 }
 
+table {
+   border-collapse: collapse;
+   width: 50%;
+   margin: 5% 25% 5% 25%;
+}
+
+td {
+   border: 0.1em solid #3531310e;
+   text-align: left;
+   padding: 8px;
+   text-align: center;
+ }
+
+
+
 /* pantallas teléfonos móviles */
 @media only screen and (max-width: 767px) {
   #header {
@@ -107,7 +121,6 @@ ol {
     margin: 3%;
     width: 50%;
     text-align: left;
-    float: left;
   }
 
   #bar {
@@ -136,8 +149,8 @@ ol {
   .mainFigure {
     display: none;
   }
-=======
-.center {
+
+  .center {
   text-align: center;
 }
 
@@ -176,7 +189,6 @@ img {
   height: auto;
   max-width: 100%;
 }
-
 
 .tableIndicator {
   margin: 3%;
@@ -225,9 +237,7 @@ h1 {
   margin-left: 15%;
 }
 
-.general-information {
-   display: none;
-}
+
 
   #mainFiguremobile {
     margin-left: auto;
@@ -348,7 +358,6 @@ h1 {
 
   #bar {
     display: none;
-
   }
 
   .logo {
@@ -403,16 +412,5 @@ h1 {
   }
 }
     
-table {
-   border-collapse: collapse;
-   width: 50%;
-   margin: 5% 25% 5% 25%;
-}
 
-td {
-   border: 0.1em solid #3531310e;
-   text-align: left;
-   padding: 8px;
-   text-align: center;
- }
 

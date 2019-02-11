@@ -12,65 +12,57 @@
 
 <!-----PAGE1----->
 
-<body id="general">
+<body>
 
-
-  <main id="main-1">
+  <main>
     <header class="center" id="header">
-      <figure id=logo class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
+      <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
       <figure id="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
       <!-- <input type="butonHeader" value="¿Quiénes somos?" id="butonHeader" class="butonHeader">
       <input type="butonHeader" value="¿Qué hacemos?" id="butonHeader" class="butonHeader">
       <input type="butonHeader" value="Contacto" id="butonHeader" class="butonHeader"> -->
-      <div id="menu">
-        <button id="who-are-we" class="info-button" href="#information-1">¿Quiénes somos?</button>
+      <div class="buttonHeader">
+        <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
         <button id="contact" class="info-button">Contacto</button>
       </div>
     </header>
 
-    <header class="center" id="header">
+    <section id="section-1">
+      <article class="tableIndicator">
+        <h2>País: México</h2>
+        <p>Elige el indicador que deseas explorar</p>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
+        <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
 
-
-    </header>
-
-    <article class="tableIndicator">
-      <h2>País: México</h2>
-      <p>Elige el indicador que deseas explorar</p>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
-      <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
-
-      <button class="elements" id="education" value="educación"> Educación
-      </button>
-
-      <button class="elements" id="laboral" value="laboral"> Laboral
-      </button>
-
-      <button class="elements" id="demographic" value="población"> Demográfico </button>
-      <br>
-      <section id="section-1">
+        <button class="elements" id="education" value="educación"> Educación</button>
+        <button class="elements" id="laboral" value="laboral"> Laboral</button>
+        <button class="elements" id="demographic" value="población"> Demográfico </button>
         <select id="indicator"> </select>
-      </section>
-
-      <select id="indicator"> </select>
-
+    </section>
     </article>
   </main>
 
   <!----Page 2--->
   <section id="section-2">
-
-    <figure id="image-logo"><img src="./imagenes/Logo completo vertical.jpg" alt=""></figure>
     <h1>Indicador</h1>
     <article>
       <h2 id="indicator-name"></h2>
-      <p id="indicator-result"></p>
-   
+      <table>
+        <thead>
+          <tr>
+              <td><strong>Año</strong> </td>
+              <td><strong>Dato</strong></td>
+          </tr>
+        </thead>
+        <tbody id="indicator-table">
+
+        </tbody>
+      </table>
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
-
   </section>
 
   <!--Page 3 Information-->
