@@ -41,18 +41,18 @@ for (let i = 0; i < elements.length; i++) {
 //función para imprimir datos de variable en el html
 const table = document.getElementById('indicator-table');
 indicator.addEventListener("change", ()=> {
+  document.getElementById('section-2').style.display='block';
+  // document.getElementsByClassName('general-information').style.display='none';
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML='';
   let indicatorSelect = indicator.value;
-  // // document.getElementById('section-2').style.display='block';
-  // document.getElementsByClassName('general-information').style.display='none';
   filteredIndicators.forEach( element => {
     if(element.indicatorCode === indicatorSelect){
       let indicatorName = element.indicatorName;
       let year = element.data;
       for (let data in year) {
-        indicatorYear = `<td>${data}</td>`;
-        indicatorData = `<td>${year[data]}<td>`;
+        indicatorYear = `<tr><td>${data}</td></tr>`;
+        indicatorData = `<tr><td>${year[data]}<td></tr>`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
