@@ -24,8 +24,8 @@ let indicatorCode = '';
 
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
-    document.getElementById('indicator').innerHTML = '';
-    document.getElementById('indicator').style.display = 'block';
+    indicator.innerHTML = '';
+    indicator.style.display = 'block';
     let valElement = elements[i].value;
     window.worldBank.filter(dataMex, valElement);
     filteredIndicators.forEach(element => {
@@ -41,6 +41,8 @@ for (let i = 0; i < elements.length; i++) {
 //función para imprimir datos de variable en el html
 const table = document.getElementById('indicator-table');
 indicator.addEventListener("change", ()=> {
+  document.getElementById('section-2').style.display='block';
+  // document.getElementsByClassName('general-information').style.display='none';
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML='';
   let indicatorSelect = indicator.value;
@@ -51,9 +53,7 @@ indicator.addEventListener("change", ()=> {
       for (let data in year) {
         indicatorYear = `<td>${data}</td>`;
         indicatorData = `<td>${year[data]}<td>`;
-        // indicatorResult = `<ol>${data} = ${year[data]}</ol>`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
-        // document.getElementById('indicator-result').insertAdjacentHTML('beforeend', indicatorResult);
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
