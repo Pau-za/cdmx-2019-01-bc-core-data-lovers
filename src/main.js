@@ -51,8 +51,8 @@ indicator.addEventListener("change", ()=> {
       let indicatorName = element.indicatorName;
       let year = element.data;
       for (let data in year) {
-        indicatorYear = `<td>${data}</td>`;
-        indicatorData = `<td>${year[data]}<td>`;
+        indicatorYear = `<tr><td>${data}</td></tr>`;
+        indicatorData = `<tr><td>${year[data]}<td></tr>`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
