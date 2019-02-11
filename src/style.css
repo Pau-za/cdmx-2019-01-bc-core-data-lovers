@@ -29,7 +29,6 @@ section {
 
 #section-1 {
   margin: 0;
-  margin-left: 18%;
   text-align: center;
 }
 
@@ -51,9 +50,9 @@ h1 {
   letter-spacing: 2pt;
 }
 
-/* #section-2 {
+#section-2 {
   display: none;
-} */
+}
 
 .indicator-result {
   text-align: center;

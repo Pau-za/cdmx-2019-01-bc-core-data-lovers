@@ -7,114 +7,97 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
-  
+
 </head>
 
 <!-----PAGE1----->
 
-<body id="general">
+<body>
 
-
-  <main id="main-1">
+  <main>
     <header class="center" id="header">
-      <figure id=logo class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
+      <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
       <figure id="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
       <!-- <input type="butonHeader" value="¿Quiénes somos?" id="butonHeader" class="butonHeader">
       <input type="butonHeader" value="¿Qué hacemos?" id="butonHeader" class="butonHeader">
       <input type="butonHeader" value="Contacto" id="butonHeader" class="butonHeader"> -->
-      <div id = "menu">
-          <button id="who-are-we" class="info-button" href = "#information-1">¿Quiénes somos?</button>
-          <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
-          <button id="contact" class="info-button">Contacto</button>
-        </div> 
-
+      <div class="buttonHeader">
+        <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
+        <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
+        <button id="contact" class="info-button">Contacto</button>
+      </div>
     </header>
 
-  <!-- <section id="section-1"> -->
-    <header class="center" id="header">
-        
-    </header>
-       <article class="tableIndicator">
-      <h2>País: México</h2>
-      <p>Elige el indicador que deseas explorar</p>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
-      <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
-      <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
+    <section id="section-1">
+      <article class="tableIndicator">
+        <h2>País: México</h2>
+        <p>Elige el indicador que deseas explorar</p>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
+        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
+        <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
 
-      <button class="elements" id="education" value="educación"> Educación
-      </button>
-
-      <button class="elements" id="laboral" value="laboral"> Laboral
-      </button>
-
-      <button class="elements" id="demographic" value="población"> Demográfico </button>
-      <br>
-      <section id="section-1">
+        <button class="elements" id="education" value="educación"> Educación</button>
+        <button class="elements" id="laboral" value="laboral"> Laboral</button>
+        <button class="elements" id="demographic" value="población"> Demográfico </button>
         <select id="indicator"> </select>
-      </section>
-
-      <select id="indicator"> </select>
-
+    </section>
     </article>
   </main>
 
   <!----Page 2--->
   <section id="section-2">
-
-    <header>
-      <figure id="image-logo"><img src="./imagenes/Logo completo vertical.jpg" alt=""></figure>
-
-      <h1>Indicador</h1>
+    <h1>Indicador</h1>
     <article>
       <h2 id="indicator-name"></h2>
+      <table>
+        <thead>
+          <tr>
+              <td><strong>Año</strong> </td>
+              <td><strong>Dato</strong></td>
+          </tr>
+        </thead>
+        <tbody id="indicator-table">
 
-      <table id="indicator-table">
-         <tr>
-        <!--  <td>Año</td>
-          <td></td>
-          <td>Valor</td> -->
-        </tr>
+        </tbody>
       </table>
-      <!-- <p id="indicator-result"></p> -->
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
-
   </section>
 
   <!--Page 3 Information-->
   <section class="general-information" id="information-1">
     <div>
       <h2>¿Quiénes somos?</h2>
-      <p>Somos dos estudiantes de Laboratoria que están interesadas en aprender a programar en Java Script 
-        para desarrollar páginas web. Nos interesan los proyectos sociales, ya que estamos convencidas de que 
+      <p>Somos dos estudiantes de Laboratoria que están interesadas en aprender a programar en Java Script
+        para desarrollar páginas web. Nos interesan los proyectos sociales, ya que estamos convencidas de que
         la tecnología puede contribuir a generar impactos positivos en la sociedad.
         <br>
-        Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan 
-        con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a> 
+        Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
+        con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
         para facilitar las investigaciones relacionadas con las mujeres en América Latina.
       </p>
-    </div>    
+    </div>
   </section>
 
   <section class="general-information" id="information-2">
-  <div>
-    <h2>¿Qué hacemos?</h2>
-    <p>Desarrollamos páginas web para formar nuevas maneras de interactuar con la sociedad. 
+    <div>
+      <h2>¿Qué hacemos?</h2>
+      <p>Desarrollamos páginas web para formar nuevas maneras de interactuar con la sociedad.
 
+      </p>
+    </div>
+  </section>
+
+  <section class="general-information" id="information-3">
+    <h2>Contacto</h2>
+    <p>Si estás interesad@ en contactarnos, puedes enviarnos un correo electrónico:
+      <br>
+      Paulina: <a href="mailto:molo_pau@hotmail.com">molo_pau@hotmail.com </a>
+      <br>
+      Andrea: <a href="">(correo)</a>
     </p>
-  </div>
-</section>
-
-<section class="general-information" id="information-3">
-  <h2>Contacto</h2>
-  <p>Si estás interesad@ en contactarnos, puedes enviarnos un correo electrónico: 
-    <br>
-    Paulina: <a href="mailto:molo_pau@hotmail.com">molo_pau@hotmail.com </a>
-    <br>
-    Andrea: <a href="">(correo)</a>
-  </p>
-</section>
+  </section>
 
   <!--FOOTER-->
   <footer id="footer"></footer>
