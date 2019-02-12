@@ -210,3 +210,12 @@ contact.addEventListener('click', () => {
 // let educationData = dataMex.find(element => {
 //   element.indicatorName == /educación/i.test
 // })
+
+hamburguerButton = () => {
+  let x = document.getElementById("buttonHeader");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
