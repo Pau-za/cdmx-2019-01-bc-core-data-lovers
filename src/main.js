@@ -212,6 +212,17 @@ contact.addEventListener('click', () => {
 //   element.indicatorName == /educación/i.test
 // })
 
+
+hamburguerButton = () => {
+  let x = document.getElementById("buttonHeader");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 //función que ordena 
 window.worldBank.sort(filteredIndicators, 'ascendent');
 console.log(indicatorData);
+
