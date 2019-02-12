@@ -2,6 +2,7 @@
 //const WORLDBANK = WORLDBANK;
 const dataMex = WORLDBANK.MEX.indicators;
 let filteredIndicators = [];
+const sortedData = [];
 
 const indicator = document.getElementById('indicator');
 
@@ -211,6 +212,7 @@ contact.addEventListener('click', () => {
 //   element.indicatorName == /educación/i.test
 // })
 
+
 hamburguerButton = () => {
   let x = document.getElementById("buttonHeader");
   if (x.style.display === "block") {
@@ -219,3 +221,8 @@ hamburguerButton = () => {
     x.style.display = "block";
   }
 }
+
+//función que ordena 
+window.worldBank.sort(filteredIndicators, 'ascendent');
+console.log(indicatorData);
+
