@@ -2,6 +2,7 @@
 //const WORLDBANK = WORLDBANK;
 const dataMex = WORLDBANK.MEX.indicators;
 let filteredIndicators = [];
+const sortedData = [];
 
 const indicator = document.getElementById('indicator');
 
@@ -210,3 +211,7 @@ contact.addEventListener('click', () => {
 // let educationData = dataMex.find(element => {
 //   element.indicatorName == /educación/i.test
 // })
+
+//función que ordena 
+window.worldBank.sort(filteredIndicators, 'ascendent');
+console.log(indicatorData);

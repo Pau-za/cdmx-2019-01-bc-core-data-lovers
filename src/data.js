@@ -8,15 +8,28 @@
 window.example = example; 
 */
 window.worldBank = {
-  filter : (data, palabraComp) => {
-    data.forEach(element => {
-      if((new RegExp(palabraComp, "i")).test(element.indicatorName)){
-        
-        filteredIndicators.push(element);
-        return filteredIndicators;
-        
+    filter: (data, wordToCompare) => {
+      data.forEach(element => {
+        if ((new RegExp(wordToCompare, "i")).test(element.indicatorName)) {
+          filteredIndicators.push(element);
+          return filteredIndicators;
+        }
+      });
+    },
+    sort: (data, sortOrder) => {
+      data.forEach(element => {
+          let year = element.data;
+          for (let data in year)
+            let indicatorData = year[data];
+          if (sortOrder === 'ascendent') {
+            indicatorData.sort((a, b) => {
+              return a - b;
+            })
+          } else if (sortOrder === 'descendent') {
+            indicatorData.sort((a, b) => {
+              return b - a;
+            })
+          }
+        }
       }
-    });
-  }
-  
-}
+    }
