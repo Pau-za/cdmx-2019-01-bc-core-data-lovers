@@ -1,4 +1,4 @@
-var WORLDBANK = {
+window.WORLDBANK = {
   "PER": {
     "indicators": [
       {
