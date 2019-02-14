@@ -46,6 +46,7 @@ for (let i = 0; i < elements.length; i++) {
 // let indicatorYear = [];
 //función para imprimir datos de variable en el html
 let roundedData = [];
+let datos = [];
 indicator.addEventListener("change", ()=> {
   document.getElementById('section-2').style.display='block';
   // document.getElementsByClassName('general-information').style.display='none';
@@ -57,14 +58,16 @@ indicator.addEventListener("change", ()=> {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
-
-        indicatorValues = `${data}, ${year[data]}`;
+  datos = parseFloat(year[data]);
+roundedData = datos.toFixed(3);
+console.log(roundedData)
+        indicatorValues = `${data}, ${roundedData}`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
         cellYear.insertAdjacentHTML('beforeend', `<tr><td>${data}</td></tr>`);
-        cellData.insertAdjacentHTML('beforeend', `<tr><td>${year[data]}<td></tr>`);
+        cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
       }
     }
     return year
