@@ -1,17 +1,16 @@
 //filtrar datos para usar los indicadores relacionados con la educació
-//const WORLDBANK = WORLDBANK;
-// const WORLDBANK = window.WORLDBANK;
-const dataMex =window.WORLDBANK.MEX.indicators;
-// let filteredIndicators = [];
+const wbData = window.WORLDBANK;
+const dataMex = window.WORLDBANK.MEX.indicators;
 let filteredIndicators = [];
-// const sortedData = [];
-// let indicatorValues = [];
-// let indicatorData = [];
-// let completeData = [];
 let year = [];
+let dataOrder = [];
+let yearOfData = [];
+let justData = [];
+let indicatorName = [];
 const table = document.getElementById('indicator-table');
 const indicator = document.getElementById('indicator');
 const elements = document.getElementsByClassName('elements')
+const chart = document.getElementById('chart');
 
 
 //Ponemos valore inicial en el select
@@ -25,9 +24,6 @@ const print = (indicatorName, indicatorCode) => {
 
 
 //evento click en los botones
-// let indicatorName = '';
-// let indicatorCode = '';
-
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
     indicator.style.display = 'block';
@@ -41,24 +37,22 @@ for (let i = 0; i < elements.length; i++) {
   })
 }
 
-// let indicatorYear = [];
 //función para imprimir datos de variable en el html
 let roundedData = [];
 let datos = [];
-indicator.addEventListener("change", ()=> {
-  document.getElementById('section-2').style.display='block';
-  // document.getElementsByClassName('general-information').style.display='none';
+let dataToGetYears = [];
+indicator.addEventListener("change", () => {
+  document.getElementById('section-2').style.display = 'block';
   document.getElementById('indicator-name').innerHTML = '';
-  table.innerHTML='';
+  table.innerHTML = '';
   let indicatorSelect = indicator.value;
-  filteredIndicators.forEach( element => {
-    if(element.indicatorCode === indicatorSelect){
+  filteredIndicators.forEach(element => {
+    if (element.indicatorCode === indicatorSelect) {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
-  datos = parseFloat(year[data]);
-roundedData = datos.toFixed(3);
-        // indicatorValues = `${data}, ${roundedData}`;
+        datos = parseFloat(year[data]);
+        roundedData = datos.toFixed(3);
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
@@ -67,28 +61,46 @@ roundedData = datos.toFixed(3);
         cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
       }
     }
-    return year
+    //extrayendo los valores de años
+    yearOfData = Object.keys(year);
+    //extrayendo los valores de datos
+    justData = Object.values(year);
+    return year, yearOfData, justData, indicatorName
   })
 })
 
+
+//Pintando la gráfica
+
+const lineChartData = {
+  labels : `${yearOfData}`,
+  dataset : [{
+    label: `${indicatorName}`,
+    data: `${justData}`,
+
+  }]
+
+}
+chart.innerHTML = lineChartData;
+
 //evento de la opción a ordenar
-let dataOrder = [];
 const orderOption = document.getElementById('type-of-order');
 orderOption.addEventListener('change', () => {
-    dataOrder = window.worldBank.sort(year, orderOption.value)
-     printSorted(dataOrder);
+  dataOrder = window.worldBank.sort(year, orderOption.value)
+  printSorted(dataOrder);
 })
 
 //pintar data ordenada que está guardada en indicatorData
 const printSorted = (dataOrder) => {
-  table.innerHTML= '';
-dataOrder.forEach(element => {
-  const row = table.insertRow(0);
-  const cellYear = row.insertCell(0);
-  const cellData = row.insertCell(1);
-  cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
-  cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
-})
+  table.innerHTML = '';
+  dataOrder.forEach(element => {
+    console.log(element[0])
+    const row = table.insertRow(0);
+    const cellYear = row.insertCell(0);
+    const cellData = row.insertCell(1);
+    cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
+    cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
+  })
 }
 
 //botones del nav
@@ -103,19 +115,19 @@ const informationThree = document.getElementById('information-3');
 
 //eventos de botones del nav
 whoAreWe.addEventListener('click', () => {
-  informationOne.style.display='block';
+  informationOne.style.display = 'block';
   informationTwo.style.display = 'none';
   informationThree.style.display = 'none';
 })
 
 whatWeDo.addEventListener('click', () => {
-  informationTwo.style.display='block';
+  informationTwo.style.display = 'block';
   informationOne.style.display = 'none';
   informationThree.style.display = 'none';
 })
 
 contact.addEventListener('click', () => {
-  informationThree.style.display='block';
+  informationThree.style.display = 'block';
   informationOne.style.display = 'none';
   informationTwo.style.display = 'none';
 })
@@ -129,5 +141,4 @@ hamburguerButton.addEventListener('click', () => {
   } else {
     x.style.display = "block";
   }
-}) 
-
+})

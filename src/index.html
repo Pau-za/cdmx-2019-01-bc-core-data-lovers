@@ -17,7 +17,7 @@
   <main>
     <header class="center" id="header">
       <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
-      <figure id="bar" class="bar" > <img src="./imagenes/navegador.png" alt=""> </figure>
+      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
 
       <div class="buttonHeader" id="buttonHeader">
         <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
@@ -40,7 +40,7 @@
         <button class="elements" id="demographic" value="población"> Demográfico </button>
         <select id="indicator"> </select>
       </article>
-      </section>
+    </section>
   </main>
 
   <!----Page 2--->
@@ -54,19 +54,22 @@
         <option class="order-option" value="descendent">Ascendente</option>
       </select>
       <div>
-      <table>
-        <thead>
-          <tr>
+        <table>
+          <thead>
+            <tr>
               <td><strong>Año</strong> </td>
               <td><strong>Dato</strong></td>
-          </tr>
-        </thead>
-        <tbody id="indicator-table">
+            </tr>
+          </thead>
+          <tbody id="indicator-table">
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
+      <div>
+      <canvas id="chart" width="400" height="400">
+      </canvas>
     </div>
-    
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
   </section>
