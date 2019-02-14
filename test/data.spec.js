@@ -203,64 +203,31 @@ const miniData = [
 ]
 
 const dataToSort = {
-    "data": {
-      "1985": "",
-      "1986": "",
-      "1987": "",
-      "1988": "",
       "1989": "",
       "1990": 33.1,
-      "1991": 31.8,
-      "1996": 26.7,
-      "1997": 25.9,
       "1998": 25.1,
-      "1999": 24.3,
-      "2000": 23.6,
-      "2001": 22.9,
-      "2002": 22.2,
-      "2003": 21.5,
-      "2004": 20.8,
-      "2005": 20,
-      "2006": 19.2,
       "2007": 18.2,
       "2008": 17.3,
-      "2009": 16.4,
-      "2010": 15.6,
-      "2011": 14.9,
-      "2012": 14.5,
-      "2013": 14.2,
+      "2013": 14.2
     }
-  }
 
-  const orderedData =  [{
-    "data": {
-      "2013": 14.2,
-      "2012": 14.5,
-      "2011": 14.9,
-      "2010": 15.6,
-      "2009": 16.4,
-      "2008": 17.3,
-      "2007": 18.2,
-      "2006": 19.2,
-      "2005": 20,
-      "2004": 20.8,
-      "2002": 22.2,
-      "2003": 21.5,
-      "2001": 22.9,
-      "2000": 23.6,
-      "1999": 24.3,
-      "1998": 25.1,
-      "1997": 25.9,
-      "1996": 26.7,
-      "1991": 31.8,
-      "1990": 33.1,
-      "1985": "",
-      "1986": "",
-      "1987": "",
-      "1988": "",
-      "1989": "",
-    }
-  }]  
+  const orderedData =  [
+    ["1989", ""],
+    ["2013", 14.2],
+    ["2008", 17.3],
+    ["2007", 18.2],
+    ["1998", 25.1],
+    ["1990", 33.1]
+  ] 
+  
+  const orderedDataDescendent = [
+    ["1990", 33.1],
+    ["1998", 25.1],
+    ["2007", 18.2],
+    ["2008", 17.3],
+    ["2013", 14.2],
+    ["1989", ""],
+  ]
 
 
 
@@ -285,11 +252,13 @@ describe('sort', () => {
   it('debería ser una función', () => {
     expect(typeof window.worldBank.sort).toBe('function');
   })
-});
-  it('debería retornar un arreglo de datos ordenados de forma ascendente para sort(indicator, `ascendent`)', () => {
+  it('debería retornar un arreglo de datos ordenados de forma ascendente para sort(dataToSort, `ascendent`)', () => {
     expect(window.worldBank.sort(dataToSort, `ascendent`)).toEqual(orderedData);
   })
-
+  it('Debería retornar un arreglo de datos ordenados de forma descendente para: sort(dataToSort, `descendent`)', () =>{
+    expect(window.worldBank.sort(dataToSort, `descendent`)).toEqual(orderedDataDescendent);
+  });
+});
 /*describe('example', () => {
   it('is a function', () => {
     expect(typeof example).toBe('function');

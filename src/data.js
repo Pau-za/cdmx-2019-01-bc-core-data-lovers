@@ -18,7 +18,6 @@ window.worldBank = {
         filteredIndicators.push(element);
       }
     });
-    console.log(filteredIndicators);
     return filteredIndicators;
   },
 

@@ -3,15 +3,13 @@
 // const WORLDBANK = window.WORLDBANK;
 const dataMex =window.WORLDBANK.MEX.indicators;
 // let filteredIndicators = [];
-let indicatorData = [];
 let filteredIndicators = [];
 // const sortedData = [];
-let indicatorValues = [];
+// let indicatorValues = [];
 // let indicatorData = [];
-let completeData = [];
+// let completeData = [];
 let year = [];
 const table = document.getElementById('indicator-table');
-const orderedTable = document.getElementById('ordered-table');
 const indicator = document.getElementById('indicator');
 const elements = document.getElementsByClassName('elements')
 
@@ -60,8 +58,7 @@ indicator.addEventListener("change", ()=> {
       for (let data in year) {
   datos = parseFloat(year[data]);
 roundedData = datos.toFixed(3);
-console.log(roundedData)
-        indicatorValues = `${data}, ${roundedData}`;
+        // indicatorValues = `${data}, ${roundedData}`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
@@ -79,7 +76,6 @@ let dataOrder = [];
 const orderOption = document.getElementById('type-of-order');
 orderOption.addEventListener('change', () => {
     dataOrder = window.worldBank.sort(year, orderOption.value)
-    console.log(dataOrder)
      printSorted(dataOrder);
 })
 
