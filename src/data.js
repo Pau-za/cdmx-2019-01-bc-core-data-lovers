@@ -25,11 +25,10 @@ window.worldBank = {
   sort: (data, sortOrder) => {
     let indicatorData = [];
     for (let i in data)
-      indicatorData.push(i, data[i]);
+      indicatorData.push([i, data[i]]);
     if (sortOrder === 'ascendent') {
       indicatorData.sort((a, b) => {
-        console.log(indicatorData)
-        return a[1] - b[1]
+        return a[1] -b[1]
       })
     } else if (sortOrder === 'descendent') {
       indicatorData.sort((a, b) => {
@@ -37,5 +36,7 @@ window.worldBank = {
         return b[1] - a[1];
       })
     }
+    
+    console.log(indicatorData)
   }
 }
