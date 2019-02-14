@@ -4,10 +4,15 @@
 const dataMex =window.WORLDBANK.MEX.indicators;
 // let filteredIndicators = [];
 let indicatorData = [];
+let filteredIndicators = [];
 // const sortedData = [];
-
+let indicatorValues = [];
+// let indicatorData = [];
+let completeData = [];
+let year = [];
+const table = document.getElementById('indicator-table');
+const orderedTable = document.getElementById('ordered-table');
 const indicator = document.getElementById('indicator');
-
 const elements = document.getElementsByClassName('elements')
 
 
@@ -24,7 +29,7 @@ const print = (indicatorName, indicatorCode) => {
 //evento click en los botones
 // let indicatorName = '';
 // let indicatorCode = '';
-let filteredIndicators = [];
+
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
     indicator.style.display = 'block';
@@ -39,12 +44,8 @@ for (let i = 0; i < elements.length; i++) {
 }
 
 // let indicatorYear = [];
-let indicatorValues = [];
-// let indicatorData = [];
-let completeData = [];
-let year = [];
 //función para imprimir datos de variable en el html
-const table = document.getElementById('indicator-table');
+let roundedData = [];
 indicator.addEventListener("change", ()=> {
   document.getElementById('section-2').style.display='block';
   // document.getElementsByClassName('general-information').style.display='none';
@@ -56,10 +57,8 @@ indicator.addEventListener("change", ()=> {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
+
         indicatorValues = `${data}, ${year[data]}`;
-        
-        // indicatorYear = `<tr><td>${data}</td></tr>`;
-        // indicatorData = `<tr><td>${year[data]}<td></tr>`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
@@ -73,19 +72,25 @@ indicator.addEventListener("change", ()=> {
 })
 
 //evento de la opción a ordenar
+let dataOrder = [];
 const orderOption = document.getElementById('type-of-order');
 orderOption.addEventListener('change', () => {
-     window.worldBank.sort(year, orderOption.value)
+    dataOrder = window.worldBank.sort(year, orderOption.value)
+    console.log(dataOrder)
+     printSorted(dataOrder);
 })
-// for(let i; i < orderOption.length; i++){
-//   orderOption[i].addEventListener('click', () => {
-//     if(orderOption.value === 'ascendent') {
-//       console.log(window.worldBank.sort(year, 'ascendent'))
-//     } else if(orderOption.value === 'descendent') {
-//       window.worldBank.sort(year, 'descendent')
-//     }
-//   })
-// }
+
+//pintar data ordenada que está guardada en indicatorData
+const printSorted = (dataOrder) => {
+  table.innerHTML= '';
+dataOrder.forEach(element => {
+  const row = table.insertRow(0);
+  const cellYear = row.insertCell(0);
+  const cellData = row.insertCell(1);
+  cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
+  cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
+})
+}
 
 //botones del nav
 const whoAreWe = document.getElementById('who-are-we');
@@ -126,8 +131,4 @@ hamburguerButton.addEventListener('click', () => {
     x.style.display = "block";
   }
 }) 
-
-//función que ordena 
-
-// console.log(filteredIndicators);
 

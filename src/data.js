@@ -32,11 +32,9 @@ window.worldBank = {
       })
     } else if (sortOrder === 'descendent') {
       indicatorData.sort((a, b) => {
-        console.log(indicatorData)
         return b[1] - a[1];
       })
     }
-    
-    console.log(indicatorData)
+    return indicatorData
   }
 }
