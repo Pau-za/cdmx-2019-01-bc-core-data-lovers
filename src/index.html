@@ -17,30 +17,31 @@
   <main>
     <header class="center" id="header">
       <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
-      <figure id="bar" class="bar" onclick="hamburguerButton()"> <img src="./imagenes/navegador.png" alt=""> </figure>
-
+      <figure id="bar" class="bar" > <img src="./imagenes/navegador.png" alt=""> </figure>
+      <nav>
       <div class="buttonHeader" id="buttonHeader">
         <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
         <button id="contact" class="info-button">Contacto</button>
       </div>
+    </nav>
     </header>
 
     <section id="section-1">
       <article class="tableIndicator">
         <h2>País: México</h2>
         <p>Elige el indicador que deseas explorar</p>
-        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
-        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
-        <figure id="mainFigure" class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
+        <figure class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
+        <figure class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
+        <figure class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
         <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
 
         <button class="elements" id="education" value="educación"> Educación</button>
         <button class="elements" id="laboral" value="laboral"> Laboral</button>
         <button class="elements" id="demographic" value="población"> Demográfico </button>
         <select id="indicator"> </select>
-    </section>
-    </article>
+      </article>
+      </section>
   </main>
 
   <!----Page 2--->
@@ -48,6 +49,11 @@
     <h1>Indicador</h1>
     <article>
       <h2 id="indicator-name"></h2>
+      <select name="" id="type-of-order">
+        <option value="">Elige el orden del dato</option>
+        <option class="order-option" value="ascendent">Ascendente</option>
+        <option class="order-option" value="descendent">Descendente</option>
+      </select>
       <table>
         <thead>
           <tr>
