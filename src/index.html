@@ -26,6 +26,15 @@
     </nav>
     </header>
 
+    <section id="section-country">
+      <h2>Paises</h2>
+      <p>Elige el país del que deseas cosultar información</p>
+      <button class="country" value="BRA">Brasil</button>
+      <button class="country" value="CHL">Chile</button>
+      <button class="country" value="MEX">México</button>
+      <button class="country" value="PER">Perú</button>
+    </section>
+
     <section id="section-1">
       <article class="tableIndicator">
         <h2>País: México</h2>
@@ -50,9 +59,10 @@
       <h2 id="indicator-name"></h2>
       <select name="" id="type-of-order">
         <option value="">Elige el orden del dato</option>
-        <option class="order-option" value="ascendent">Ascendente</option>
-        <option class="order-option" value="descendent">Descendente</option>
+        <option class="order-option" value="ascendent">Descendente</option>
+        <option class="order-option" value="descendent">Ascendente</option>
       </select>
+      <div>
       <table>
         <thead>
           <tr>
@@ -64,6 +74,8 @@
 
         </tbody>
       </table>
+    </div>
+    
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
   </section>

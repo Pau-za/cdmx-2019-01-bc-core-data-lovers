@@ -11,6 +11,16 @@ window.example = example;
 
 
 window.worldBank = {
+filterCountry: (data,country) => {
+  let countryName = [];
+  for (let dataCountry in data){
+    // console.log(dataCountry, data[dataCountry].indicators)
+    if (country === dataCountry){
+      return countryName =  dataCountry, data[dataCountry].indicators
+    } 
+  }
+},
+
   filter: (data, wordToCompare) => {
     let filteredIndicators = [];
     data.forEach(element => {
@@ -18,7 +28,6 @@ window.worldBank = {
         filteredIndicators.push(element);
       }
     });
-    console.log(filteredIndicators);
     return filteredIndicators;
   },
 
@@ -32,11 +41,9 @@ window.worldBank = {
       })
     } else if (sortOrder === 'descendent') {
       indicatorData.sort((a, b) => {
-        console.log(indicatorData)
         return b[1] - a[1];
       })
     }
-    
-    console.log(indicatorData)
+    return indicatorData
   }
 }
