@@ -1,13 +1,15 @@
 //filtrar datos para usar los indicadores relacionados con la educació
-//const WORLDBANK = WORLDBANK;
-const dataMex = WORLDBANK.MEX.indicators;
+const wbData = window.WORLDBANK;
+const dataMex = window.WORLDBANK.MEX.indicators;
+let filteredCountry = [];
 let filteredIndicators = [];
-const sortedData = [];
+let dataOrder = [];
+let year = [];
 
+const table = document.getElementById('indicator-table');
 const indicator = document.getElementById('indicator');
-
-const elements = document.getElementsByClassName('elements')
-
+const elements = document.getElementsByClassName('elements');
+const country = document.getElementsByClassName('country');
 
 //Ponemos valore inicial en el select
 indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indicador</option>');
@@ -19,16 +21,23 @@ const print = (indicatorName, indicatorCode) => {
 }
 
 
-//evento click en los botones
-let indicatorName = '';
-let indicatorCode = '';
+//evento click en los botones pais
+for (let i = 0; i <= elements.length; i++) {
+  country[i].addEventListener('click', () => {
+    let countryValue = country[i].value;
+    console.log(countryValue)
+    filteredCountry = window.worldBank.filterCountry(wbData, countryValue);
+    console.log(filteredCountry);
+  })
+}
 
+
+//evento click en los botones indicadores
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
-    indicator.innerHTML = '';
     indicator.style.display = 'block';
-    let valElement = elements[i].value;
-    window.worldBank.filter(dataMex, valElement);
+    let valElement = elements[i].value; // event.target.value
+    console.log(filteredIndicators = window.worldBank.filter(filteredCountry, valElement));
     filteredIndicators.forEach(element => {
       let indicatorName = element.indicatorName;
       let indicatorCode = element.indicatorCode;
@@ -37,33 +46,53 @@ for (let i = 0; i < elements.length; i++) {
   })
 }
 
-
-
 //función para imprimir datos de variable en el html
-const table = document.getElementById('indicator-table');
-indicator.addEventListener("change", ()=> {
-  document.getElementById('section-2').style.display='block';
+let roundedData = [];
+let datos = [];
+indicator.addEventListener("change", () => {
+  document.getElementById('section-2').style.display = 'block';
   // document.getElementsByClassName('general-information').style.display='none';
   document.getElementById('indicator-name').innerHTML = '';
-  table.innerHTML='';
+  table.innerHTML = '';
   let indicatorSelect = indicator.value;
-  filteredIndicators.forEach( element => {
-    if(element.indicatorCode === indicatorSelect){
+  filteredIndicators.forEach(element => {
+    if (element.indicatorCode === indicatorSelect) {
       let indicatorName = element.indicatorName;
-      let year = element.data;
+      year = element.data;
       for (let data in year) {
-        indicatorYear = `<tr><td>${data}</td></tr>`;
-        indicatorData = `<tr><td>${year[data]}<td></tr>`;
+        datos = parseFloat(year[data]);
+        roundedData = datos.toFixed(3);
+        // indicatorValues = `${data}, ${roundedData}`;
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
-        cellYear.insertAdjacentHTML('beforeend', indicatorYear);
-        cellData.insertAdjacentHTML('beforeend', indicatorData);
+        cellYear.insertAdjacentHTML('beforeend', `<tr><td>${data}</td></tr>`);
+        cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
       }
     }
+    return year
   })
 })
+
+//evento de la opción a ordenar
+const orderOption = document.getElementById('type-of-order');
+orderOption.addEventListener('change', () => {
+  dataOrder = window.worldBank.sort(year, orderOption.value)
+  printSorted(dataOrder);
+})
+
+//pintar data ordenada que está guardada en indicatorData
+const printSorted = (dataOrder) => {
+  table.innerHTML = '';
+  dataOrder.forEach(element => {
+    const row = table.insertRow(0);
+    const cellYear = row.insertCell(0);
+    const cellData = row.insertCell(1);
+    cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
+    cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
+  })
+}
 
 //botones del nav
 const whoAreWe = document.getElementById('who-are-we');
@@ -77,152 +106,30 @@ const informationThree = document.getElementById('information-3');
 
 //eventos de botones del nav
 whoAreWe.addEventListener('click', () => {
-  informationOne.style.display='block';
+  informationOne.style.display = 'block';
   informationTwo.style.display = 'none';
   informationThree.style.display = 'none';
 })
 
 whatWeDo.addEventListener('click', () => {
-  informationTwo.style.display='block';
+  informationTwo.style.display = 'block';
   informationOne.style.display = 'none';
   informationThree.style.display = 'none';
 })
 
 contact.addEventListener('click', () => {
-  informationThree.style.display='block';
+  informationThree.style.display = 'block';
   informationOne.style.display = 'none';
   informationTwo.style.display = 'none';
 })
 
+const hamburguerButton = document.getElementById('bar');
 
-
-
-//evento de click
-// const typeIndicator = () => {
-//   button.addEventListener ('click', () => {
-//      console.log(button.value);
-//   } )
-// }
-
-
-
-//   educationButton.addEventListener('click',()=>{
-//   wordToCompare = educationButton.value;
-//   filterFunction(dataMex, wordToCompare);
-//   filteredIndicators.forEach(element => {
-//   let indicatorName = element.indicatorName;
-//   let indicatorCode = element.indicatorCode;
-//   print(indicatorName, indicatorCode);
-//   })
-
-// })
-
-
-
-
-
-
-// const education = document.getElementById('education');
-// const laboral = document.getElementById ('laboral');
-// const demographic = document.getElementById ('demographic');
-
-// // Funcion que imprime los indicadores de educación en el select
-// education.insertAdjacentHTML ("beforeend", '<option value="">Selecciona un indicador</option>');
-// const print = (indicatorName, indicatorCode) => {
-//   let result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
-//   education.insertAdjacentHTML('beforeend', result);
-// }
-
-// //función de extraer elementos:
-// educationIndicators.forEach(element => {
-//   let indicatorName = element.indicatorName;
-//   let indicatorCode = element.indicatorCode;
-//   print(indicatorName, indicatorCode)
-// });
-
-// // Funcion que imprime los indicadores de laboral en el select
-// laboral.insertAdjacentHTML ("beforeend", '<option value="">Selecciona un indicador</option>');
-// const printLaboral = (indicatorName, indicatorCode) => {
-//   let result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
-//   laboral.insertAdjacentHTML('beforeend', result);
-// }
-
-
-// //función de extraer elementos:
-// laboralIndicators.forEach(element => {
-//   let indicatorName = element.indicatorName;
-//   let indicatorCode = element.indicatorCode;
-//   printLaboral(indicatorName, indicatorCode)
-// });
-
-// // Funcion que imprime los indicadores de demográfico en el select
-
-// demographic.insertAdjacentHTML ("beforeend", '<option value="">Selecciona un indicador</option>');
-// const printDemographic = (indicatorName, indicatorCode) => {
-//   let result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
-//   demographic.insertAdjacentHTML('beforeend', result);
-// }
-
-// //función de extraer elementos:
-// demographicIndicators.forEach(element => {
-//   let indicatorName = element.indicatorName;
-//   let indicatorCode = element.indicatorCode;
-//   printDemographic(indicatorName, indicatorCode)
-// });
-
-// //función para imprimir datos de variable en el html
-// education.addEventListener("change", ()=> {
-//   document.getElementById('indicator-name').innerHTML = '';
-//   document.getElementById('indicator-result').innerHTML='';
-//   let indicatorSelect = education.value;
-//   educationIndicatiors.forEach( element => {
-//     if(element.indicatorCode == indicatorSelect){
-//       let indicatorName = element.indicatorName;
-//       let year = element.data;
-//       console.log(element.data);
-//       for (let data in year) {
-//         indicatorResult = `<ol>${data} = ${year[data]}</ol>`;
-//         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
-//         document.getElementById('indicator-result').insertAdjacentHTML('beforeend', indicatorResult);
-//       }
-//     }
-//   })
-// })
-
-
-// //EVENTO EN EL INDICADOR
-// let indicatorResult = ('');
-
-// //Eventos, variables
-// const sectionOne = document.getElementById('section-1');
-// const sectionTwo = document.getElementById('section-2');
-
-// //Evento del botón "Volver a inicio"
-// // const startButton = document.getElementById('startButton');
-
-// // startButton.addEventListener('click', () => {
-// //   sectionTwo.classList.add('hide');
-// //   sectionOne.classList.remove('hide');
-// // })
-
-
-
-// /*
-// let educationData = dataMex.find(element => {
-//   element.indicatorName == /educación/i.test
-// })
-
-
-hamburguerButton = () => {
+hamburguerButton.addEventListener('click', () => {
   let x = document.getElementById("buttonHeader");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
     x.style.display = "block";
   }
-}
-
-//función que ordena 
-window.worldBank.sort(filteredIndicators, 'ascendent');
-console.log(indicatorData);
-
+})
