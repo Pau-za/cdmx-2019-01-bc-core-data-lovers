@@ -30,6 +30,7 @@ const print = (indicatorName, indicatorCode) => {
 
 //evento click en los botones pais
 for (let i = 0; i <= elements.length; i++) {
+  
   country[i].addEventListener('click', () => {
      sectionType.style.display= 'block';
     let countryValue = country[i].value;
@@ -42,7 +43,7 @@ for (let i = 0; i <= elements.length; i++) {
 //evento click en los botones
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
-    indicator.innerHTML= '';
+    indicator.innerHTML = '';
     indicator.style.display = 'block';
     let valElement = elements[i].value; // event.target.value
     console.log(filteredIndicators = window.worldBank.filter(filteredCountry, valElement));
@@ -62,7 +63,7 @@ indicator.addEventListener("change", () => {
   sectionCountry.style.display = 'none';
   sectionType.style.display = 'none';
   // document.getElementsByClassName('general-information').style.display='none';
-let dataToGetYears = [];
+  let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML = '';
   let indicatorSelect = indicator.value;
@@ -84,7 +85,7 @@ let dataToGetYears = [];
     //extrayendo los valores de años
     yearOfData = Object.keys(year);
     //extrayendo los valores de datos
-    justData = Object.values(year);  
+    justData = Object.values(year);
   })
   console.log(getMyChartPlease(yearOfData, justData, chart));
   return year
@@ -93,20 +94,20 @@ let dataToGetYears = [];
 
 //función de gráfica
 const getMyChartPlease = (yearOfData, justData, chart) => {
-//Pintando la gráfica
-let lineChartData = new Chart(chart, {
-  type: 'line',
-  data: {
-    labels: yearOfData,
-    datasets: [{
+  //Pintando la gráfica
+  let lineChartData = new Chart(chart, {
+    type: 'line',
+    data: {
+      labels: yearOfData,
+      datasets: [{
         label: 'Datos del indicador',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         data: justData,
       }]
     }
-})
-return lineChartData;
+  })
+  return lineChartData;
 }
 
 
