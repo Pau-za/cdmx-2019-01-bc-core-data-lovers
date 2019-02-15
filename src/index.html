@@ -30,7 +30,17 @@
     </nav>
     </header>
 
-    <section id="section-country">
+    <section id="introduction" >
+<h1>Bienvenida a DataFemme</h1>
+<p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
+  con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
+  para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
+<button id="buttonData">Ir a la Data</button>    
+</section>
+
+<!----Page 2--->    
+
+    <section id="section-country" class="hide">
       <h2>Paises</h2>
       <p>Elige el país del que deseas cosultar información</p>
       <button class="country" value="BRA">Brasil</button>
@@ -39,9 +49,11 @@
       <button class="country" value="PER">Perú</button>
     </section>
 
-    <section id="section-1">
+
+<!----Page 3--->    
+    <section id="section-type" class="hide">
       <article class="tableIndicator">
-        <h2>País: México</h2>
+        <h2 id="countrySelected"></h2>
         <p>Elige el indicador que deseas explorar</p>
         <figure class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
         <figure class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
@@ -56,8 +68,8 @@
     </section>
   </main>
 
-  <!----Page 2--->
-  <section id="section-2">
+<!----Page 4--->    
+  <section id="section-orderChart" class='hide'>
     <h1>Indicador</h1>
     <article>
       <h2 id="indicator-name"></h2>
@@ -86,8 +98,10 @@
     <canvas id ="myChart"></canvas>
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
-  </section>
+    <button class="button" id="chooseIndicator">Elegir otro indicador</button>
 
+  </section>
+  
   <!--Page 3 Information-->
   <section class="general-information" id="information-1">
     <div>
