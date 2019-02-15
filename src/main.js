@@ -59,7 +59,7 @@ indicator.addEventListener("change", () => {
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
         cellYear.insertAdjacentHTML('beforeend', `<tr><td>${data}</td></tr>`);
-        cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
+        cellData.insertAdjacentHTML('beforeend', `<tr><td>${year[data]}<td></tr>`);
       }
     }
     //extrayendo los valores de años
@@ -67,7 +67,7 @@ indicator.addEventListener("change", () => {
     //extrayendo los valores de datos
     justData = Object.values(year);  
   })
-  getMyChartPlease(yearOfData, justData, chart);
+  console.log(getMyChartPlease(yearOfData, justData, chart));
   return year
 })
 
@@ -78,36 +78,17 @@ const getMyChartPlease = (yearOfData, justData, chart) => {
 let lineChartData = new Chart(chart, {
   type: 'line',
   data: {
-    labels: `${yearOfData}`,
+    labels: yearOfData,
     datasets: [{
-        label: `${indicatorName}`,
+        label: 'Datos del indicador',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: `${justData}`,
+        data: justData,
       }]
     }
 })
 return lineChartData;
 }
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var mychart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    },
-  // Configuration options go here
-  options: {}
-});
 
 
 //evento de la opción a ordenar
