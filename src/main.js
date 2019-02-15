@@ -10,7 +10,7 @@ let indicatorName = [];
 const table = document.getElementById('indicator-table');
 const indicator = document.getElementById('indicator');
 const elements = document.getElementsByClassName('elements')
-const chart = document.getElementById('chart');
+const chart = document.getElementById('chart').getContext('2d');
 
 
 //Ponemos valore inicial en el select
@@ -26,6 +26,7 @@ const print = (indicatorName, indicatorCode) => {
 //evento click en los botones
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
+    indicator.innerHTML= '';
     indicator.style.display = 'block';
     let valElement = elements[i].value; // event.target.value
     filteredIndicators = window.worldBank.filter(dataMex, valElement);
@@ -51,8 +52,8 @@ indicator.addEventListener("change", () => {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
-        datos = parseFloat(year[data]);
-        roundedData = datos.toFixed(3);
+        // datos = parseFloat(year[data]);
+        // roundedData = datos.toFixed(3);
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
@@ -64,24 +65,50 @@ indicator.addEventListener("change", () => {
     //extrayendo los valores de años
     yearOfData = Object.keys(year);
     //extrayendo los valores de datos
-    justData = Object.values(year);
-    return year, yearOfData, justData, indicatorName
+    justData = Object.values(year);  
   })
+  getMyChartPlease(yearOfData, justData, chart);
+  return year
 })
 
 
+//función de gráfica
+const getMyChartPlease = (yearOfData, justData, chart) => {
 //Pintando la gráfica
-
-const lineChartData = {
-  labels : `${yearOfData}`,
-  dataset : [{
-    label: `${indicatorName}`,
-    data: `${justData}`,
-
-  }]
-
+let lineChartData = new Chart(chart, {
+  type: 'line',
+  data: {
+    labels: `${yearOfData}`,
+    datasets: [{
+        label: `${indicatorName}`,
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: `${justData}`,
+      }]
+    }
+})
+return lineChartData;
 }
-chart.innerHTML = lineChartData;
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var mychart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+  // Configuration options go here
+  options: {}
+});
+
 
 //evento de la opción a ordenar
 const orderOption = document.getElementById('type-of-order');
