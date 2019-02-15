@@ -13,6 +13,10 @@ const indicator = document.getElementById('indicator');
 const elements = document.getElementsByClassName('elements')
 const chart = document.getElementById('chart').getContext('2d');
 const country = document.getElementsByClassName('country');
+const sectionType = document.getElementById('section-type');
+const sectionOrderChart =  document.getElementById('section-orderChart')
+const chooseIndicator = document.getElementById('chooseIndicator');
+const startButton = document.getElementById ('startButton')
 
 //Ponemos valore inicial en el select
 indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indicador</option>');
@@ -28,6 +32,7 @@ const print = (indicatorName, indicatorCode) => {
 for (let i = 0; i <= elements.length; i++) {
   
   country[i].addEventListener('click', () => {
+     sectionType.style.display= 'block';
     let countryValue = country[i].value;
     console.log(countryValue)
     filteredCountry = window.worldBank.filterCountry(wbData, countryValue);
@@ -54,7 +59,9 @@ for (let i = 0; i < elements.length; i++) {
 let roundedData = [];
 let datos = [];
 indicator.addEventListener("change", () => {
-  document.getElementById('section-2').style.display = 'block';
+  sectionOrderChart.style.display = 'block';
+  sectionCountry.style.display = 'none';
+  sectionType.style.display = 'none';
   // document.getElementsByClassName('general-information').style.display='none';
   let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
@@ -127,6 +134,30 @@ const printSorted = (dataOrder) => {
 const whoAreWe = document.getElementById('who-are-we');
 const whatWeDo = document.getElementById('what-we-do');
 const contact = document.getElementById('contact');
+
+//boton inicio data
+const buttonData = document.getElementById('buttonData');
+const sectionCountry = document.getElementById ('section-country');
+const introduction = document.getElementById('introduction');
+//evento de boton data
+buttonData.addEventListener('click', () => {
+  sectionCountry.style.display= 'block';
+  introduction.style.display='none';
+
+})
+
+// boton startButton
+startButton.addEventListener('click', () => {
+  introduction.style.display='block';
+  sectionOrderChart.style.display = 'none';
+})
+
+// boton chooseIndicator
+chooseIndicator.addEventListener('click', () => {
+  sectionCountry.style.display = 'block';
+  sectionType.style.display = 'block';
+  sectionOrderChart.style.display = 'none';
+})
 
 //information ids
 const informationOne = document.getElementById('information-1');

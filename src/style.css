@@ -5,6 +5,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.hide{
+display: none;
+}
+
 img {
   height: auto;
   max-width: 100%;
@@ -26,7 +30,7 @@ section {
   text-align: center;
 }
 
-#section-1 {
+#section-type {
   margin: 0;
   text-align: center;
 }
@@ -50,10 +54,6 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8em;
   letter-spacing: 2pt;
-}
-
-#section-2 {
-  display: none;
 }
 
 .indicator-result {
@@ -168,11 +168,11 @@ td {
     margin-right: 5%;
   }
 
-  #section-2 {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#section-orderChart {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
   #mainFiguremobile {
     margin-left: auto;
