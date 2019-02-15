@@ -1,6 +1,7 @@
 //filtrar datos para usar los indicadores relacionados con la educació
 const wbData = window.WORLDBANK;
 const dataMex = window.WORLDBANK.MEX.indicators;
+let filteredCountry = [];
 let filteredIndicators = [];
 let year = [];
 let dataOrder = [];
@@ -11,7 +12,7 @@ const table = document.getElementById('indicator-table');
 const indicator = document.getElementById('indicator');
 const elements = document.getElementsByClassName('elements')
 const chart = document.getElementById('chart').getContext('2d');
-
+const country = document.getElementsByClassName('country');
 
 //Ponemos valore inicial en el select
 indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indicador</option>');
@@ -23,13 +24,23 @@ const print = (indicatorName, indicatorCode) => {
 }
 
 
+//evento click en los botones pais
+for (let i = 0; i <= elements.length; i++) {
+  country[i].addEventListener('click', () => {
+    let countryValue = country[i].value;
+    console.log(countryValue)
+    filteredCountry = window.worldBank.filterCountry(wbData, countryValue);
+    console.log(filteredCountry);
+  })
+}
+
 //evento click en los botones
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
     indicator.innerHTML= '';
     indicator.style.display = 'block';
     let valElement = elements[i].value; // event.target.value
-    filteredIndicators = window.worldBank.filter(dataMex, valElement);
+    console.log(filteredIndicators = window.worldBank.filter(filteredCountry, valElement));
     filteredIndicators.forEach(element => {
       let indicatorName = element.indicatorName;
       let indicatorCode = element.indicatorCode;
@@ -41,9 +52,10 @@ for (let i = 0; i < elements.length; i++) {
 //función para imprimir datos de variable en el html
 let roundedData = [];
 let datos = [];
-let dataToGetYears = [];
 indicator.addEventListener("change", () => {
   document.getElementById('section-2').style.display = 'block';
+  // document.getElementsByClassName('general-information').style.display='none';
+let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML = '';
   let indicatorSelect = indicator.value;
@@ -102,7 +114,6 @@ orderOption.addEventListener('change', () => {
 const printSorted = (dataOrder) => {
   table.innerHTML = '';
   dataOrder.forEach(element => {
-    console.log(element[0])
     const row = table.insertRow(0);
     const cellYear = row.insertCell(0);
     const cellData = row.insertCell(1);
