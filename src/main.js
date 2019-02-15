@@ -3,12 +3,15 @@ const wbData = window.WORLDBANK;
 const dataMex = window.WORLDBANK.MEX.indicators;
 let filteredCountry = [];
 let filteredIndicators = [];
-let dataOrder = [];
 let year = [];
-
+let dataOrder = [];
+let yearOfData = [];
+let justData = [];
+let indicatorName = [];
 const table = document.getElementById('indicator-table');
 const indicator = document.getElementById('indicator');
-const elements = document.getElementsByClassName('elements');
+const elements = document.getElementsByClassName('elements')
+const chart = document.getElementById('chart').getContext('2d');
 const country = document.getElementsByClassName('country');
 
 //Ponemos valore inicial en el select
@@ -31,10 +34,10 @@ for (let i = 0; i <= elements.length; i++) {
   })
 }
 
-
-//evento click en los botones indicadores
+//evento click en los botones
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
+    indicator.innerHTML= '';
     indicator.style.display = 'block';
     let valElement = elements[i].value; // event.target.value
     console.log(filteredIndicators = window.worldBank.filter(filteredCountry, valElement));
@@ -52,6 +55,7 @@ let datos = [];
 indicator.addEventListener("change", () => {
   document.getElementById('section-2').style.display = 'block';
   // document.getElementsByClassName('general-information').style.display='none';
+let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML = '';
   let indicatorSelect = indicator.value;
@@ -60,20 +64,44 @@ indicator.addEventListener("change", () => {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
-        datos = parseFloat(year[data]);
-        roundedData = datos.toFixed(3);
-        // indicatorValues = `${data}, ${roundedData}`;
+        // datos = parseFloat(year[data]);
+        // roundedData = datos.toFixed(3);
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
         cellYear.insertAdjacentHTML('beforeend', `<tr><td>${data}</td></tr>`);
-        cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
+        cellData.insertAdjacentHTML('beforeend', `<tr><td>${year[data]}<td></tr>`);
       }
     }
-    return year
+    //extrayendo los valores de años
+    yearOfData = Object.keys(year);
+    //extrayendo los valores de datos
+    justData = Object.values(year);  
   })
+  console.log(getMyChartPlease(yearOfData, justData, chart));
+  return year
 })
+
+
+//función de gráfica
+const getMyChartPlease = (yearOfData, justData, chart) => {
+//Pintando la gráfica
+let lineChartData = new Chart(chart, {
+  type: 'line',
+  data: {
+    labels: yearOfData,
+    datasets: [{
+        label: 'Datos del indicador',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: justData,
+      }]
+    }
+})
+return lineChartData;
+}
+
 
 //evento de la opción a ordenar
 const orderOption = document.getElementById('type-of-order');
