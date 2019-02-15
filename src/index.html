@@ -7,6 +7,8 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  
 
 </head>
 
@@ -17,7 +19,7 @@
   <main>
     <header class="center" id="header">
       <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
-      <figure id="bar" class="bar" > <img src="./imagenes/navegador.png" alt=""> </figure>
+      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
 
       <div class="buttonHeader" id="buttonHeader">
         <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
@@ -40,7 +42,7 @@
         <button class="elements" id="demographic" value="población"> Demográfico </button>
         <select id="indicator"> </select>
       </article>
-      </section>
+    </section>
   </main>
 
   <!----Page 2--->
@@ -54,19 +56,23 @@
         <option class="order-option" value="descendent">Ascendente</option>
       </select>
       <div>
-      <table>
-        <thead>
-          <tr>
+        <table>
+          <thead>
+            <tr>
               <td><strong>Año</strong> </td>
               <td><strong>Dato</strong></td>
-          </tr>
-        </thead>
-        <tbody id="indicator-table">
+            </tr>
+          </thead>
+          <tbody id="indicator-table">
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
+      <div>
+      <canvas id="chart">
+      </canvas>
     </div>
-    
+    <canvas id ="myChart"></canvas>
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
   </section>
