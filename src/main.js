@@ -14,9 +14,9 @@ const elements = document.getElementsByClassName('elements')
 const chart = document.getElementById('chart').getContext('2d');
 const country = document.getElementsByClassName('country');
 const sectionType = document.getElementById('section-type');
-const sectionOrderChart =  document.getElementById('section-orderChart')
+const sectionOrderChart = document.getElementById('section-orderChart')
 const chooseIndicator = document.getElementById('chooseIndicator');
-const startButton = document.getElementById ('startButton')
+const startButton = document.getElementById('startButton')
 
 //Ponemos valore inicial en el select
 indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indicador</option>');
@@ -30,9 +30,9 @@ const print = (indicatorName, indicatorCode) => {
 
 //evento click en los botones pais
 for (let i = 0; i <= elements.length; i++) {
-  
+
   country[i].addEventListener('click', () => {
-     sectionType.style.display= 'block';
+    sectionType.style.display = 'block';
     let countryValue = country[i].value;
     console.log(countryValue)
     filteredCountry = window.worldBank.filterCountry(wbData, countryValue);
@@ -62,8 +62,7 @@ indicator.addEventListener("change", () => {
   sectionOrderChart.style.display = 'block';
   sectionCountry.style.display = 'none';
   sectionType.style.display = 'none';
-  // document.getElementsByClassName('general-information').style.display='none';
-  let dataToGetYears = [];
+    let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML = '';
   let indicatorSelect = indicator.value;
@@ -72,27 +71,34 @@ indicator.addEventListener("change", () => {
       let indicatorName = element.indicatorName;
       year = element.data;
       for (let data in year) {
-        // datos = parseFloat(year[data]);
-        // roundedData = datos.toFixed(3);
+        if(year[data] !== ''){
+        datos = parseFloat(year[data]);
+        roundedData = datos.toFixed(2)
+      }else {
+       roundedData =year[data]
+      }
         document.getElementById('indicator-name').innerHTML = indicatorName + ':';
         const row = table.insertRow(0);
         const cellYear = row.insertCell(0);
         const cellData = row.insertCell(1);
         cellYear.insertAdjacentHTML('beforeend', `<tr><td>${data}</td></tr>`);
-        cellData.insertAdjacentHTML('beforeend', `<tr><td>${year[data]}<td></tr>`);
+        cellData.insertAdjacentHTML('beforeend', `<tr><td>${roundedData}<td></tr>`);
       }
-    }
+    
     //extrayendo los valores de años
     yearOfData = Object.keys(year);
     //extrayendo los valores de datos
     justData = Object.values(year);
+    }
   })
-  console.log(getMyChartPlease(yearOfData, justData, chart));
+  getMyChartPlease(yearOfData, justData, chart);
+  console.log(roundedData)
   return year
 })
 
 
-//función de gráfica
+
+//función de gráfica normal
 const getMyChartPlease = (yearOfData, justData, chart) => {
   //Pintando la gráfica
   let lineChartData = new Chart(chart, {
@@ -110,15 +116,27 @@ const getMyChartPlease = (yearOfData, justData, chart) => {
   return lineChartData;
 }
 
-
-//evento de la opción a ordenar
-const orderOption = document.getElementById('type-of-order');
-orderOption.addEventListener('change', () => {
-  dataOrder = window.worldBank.sort(year, orderOption.value)
-  printSorted(dataOrder);
-})
+//Función de la gráfica ascendente
+const ascendentChart = document.getElementById('ascendent-chart');
+const getMyAscendentChart = (years, data, ascendentChart) => {
+  let lineAscendentChart = new Chart(ascendentChart, {
+    type: 'line',
+    data: {
+      labels: yearOfDataOrdered,
+      datasets: [{
+        label: 'Datos del indicador',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: justDataOrdered,
+      }]
+    }
+  })
+  return lineAscendentChart;
+}
 
 //pintar data ordenada que está guardada en indicatorData
+let yearOfDataOrdered = [];
+let justDataOrdered = [];
 const printSorted = (dataOrder) => {
   table.innerHTML = '';
   dataOrder.forEach(element => {
@@ -127,8 +145,21 @@ const printSorted = (dataOrder) => {
     const cellData = row.insertCell(1);
     cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
     cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
+    yearOfDataOrdered.push(element[0])
+    justDataOrdered.push(element[1])
   })
+  return yearOfDataOrdered, justDataOrdered
 }
+
+//evento de la opción a ordenar
+const orderOption = document.getElementById('type-of-order');
+orderOption.addEventListener('change', () => {
+  chart.innerHTML='';
+  dataOrder = window.worldBank.sort(year, orderOption.value)
+  printSorted(dataOrder);
+  // getMyAscendentChart(yearOfDataOrdered, justDataOrdered, chart)
+})
+
 
 //botones del nav
 const whoAreWe = document.getElementById('who-are-we');
@@ -137,18 +168,18 @@ const contact = document.getElementById('contact');
 
 //boton inicio data
 const buttonData = document.getElementById('buttonData');
-const sectionCountry = document.getElementById ('section-country');
+const sectionCountry = document.getElementById('section-country');
 const introduction = document.getElementById('introduction');
 //evento de boton data
 buttonData.addEventListener('click', () => {
-  sectionCountry.style.display= 'block';
-  introduction.style.display='none';
+  sectionCountry.style.display = 'block';
+  introduction.style.display = 'none';
 
 })
 
 // boton startButton
 startButton.addEventListener('click', () => {
-  introduction.style.display='block';
+  introduction.style.display = 'block';
   sectionOrderChart.style.display = 'none';
 })
 
