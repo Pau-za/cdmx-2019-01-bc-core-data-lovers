@@ -16,7 +16,7 @@
 
 <body>
 
-  
+
   <main>
     <header class="center" id="header">
       <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
@@ -27,34 +27,33 @@
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
         <button id="contact" class="info-button">Contacto</button>
       </div>
-      </nav>
     </header>
 
-    <section id="introduction" >
-<h1>Bienvenida a DataFemme</h1>
-<p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
-  con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
-  para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
-<button id="buttonData">Ir a la Data</button>    
-</section>
+    <section id="introduction">
+      <h1>Bienvenida a DataFemme</h1>
+      <p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
+        con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
+        para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
+      <button id="buttonData">Ir a la Data</button>
+    </section>
 
-<!----Page 2--->    
+    <!----Page 2--->
 
     <section id="section-country" class="hide">
       <h2>Paises</h2>
       <p>Elige el país del que deseas cosultar información</p>
-      <button class="country" value="BRA">Brasil</button>
-      <button class="country" value="CHL">Chile</button>
-      <button class="country" value="MEX">México</button>
-      <button class="country" value="PER">Perú</button>
+      <button class="country" value="BRA" name="Brasil">Brasil</button>
+      <button class="country" value="CHL" name="Chile">Chile</button>
+      <button class="country" value="MEX" name="México">México</button>
+      <button class="country" value="PER" name="Perú">Perú</button>
     </section>
 
 
-<!----Page 3--->    
+    <!----Page 3--->
     <section id="section-type" class="hide">
       <article class="tableIndicator">
-        <h2 id="countrySelected"></h2>
-        <p>Elige el indicador que deseas explorar</p>
+
+        <p>Elige el tipo de indicador que deseas explorar</p>
         <figure class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
         <figure class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
         <figure class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
@@ -68,9 +67,10 @@
     </section>
   </main>
 
-<!----Page 4--->    
-  <section id="section-orderChart" class='hide'>
-    <h1>Indicador</h1>
+  <!----Page 4--->
+  <section id="section-orderChart" class="hide">
+    <h2 id="countrySelected"></h2>
+    <h2>Indicador:</h2>
     <article>
       <h2 id="indicator-name"></h2>
       <select name="" id="type-of-order">
@@ -101,12 +101,13 @@
     <button class="button" id="chooseIndicator">Elegir otro indicador</button>
 
   </section>
-  
+
   <!--Page 3 Information-->
   <section class="general-information" id="information-1">
     <div>
       <h2>¿Quiénes somos?</h2>
-      <p>Somos dos estudiantes de <a href="https://www.laboratoria.la/">Laboratoria</a> interesadas en aprender a programar en Java Script
+      <p>Somos dos estudiantes de <a href="https://www.laboratoria.la/">Laboratoria</a> interesadas en aprender a
+        programar en Java Script
         para desarrollar páginas web. Nos interesan los proyectos sociales, ya que estamos convencidas de que
         la tecnología puede contribuir a generar impactos positivos en la sociedad.
       </p>

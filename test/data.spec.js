@@ -229,11 +229,11 @@ const dataToSort = {
     ["1989", ""],
   ]
 
-
-
-
-//Así es como me imagino que puede ser el test...
-
+describe('filterCountry', () => {
+  it('Debería ser un objeto', () => {
+    expect(typeof window.worldBank).toBe('object');
+  })
+})
 describe('filter', () => {
   it('Debería ser un objeto', () => {
     expect(typeof window.worldBank).toBe('object');
@@ -259,12 +259,4 @@ describe('sort', () => {
     expect(window.worldBank.sort(dataToSort, `descendent`)).toEqual(orderedDataDescendent);
   });
 });
-/*describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});*/
