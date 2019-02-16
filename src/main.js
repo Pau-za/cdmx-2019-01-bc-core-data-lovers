@@ -62,7 +62,6 @@ indicator.addEventListener("change", () => {
   sectionOrderChart.style.display = 'block';
   sectionCountry.style.display = 'none';
   sectionType.style.display = 'none';
-    let dataToGetYears = [];
   document.getElementById('indicator-name').innerHTML = '';
   table.innerHTML = '';
   let indicatorSelect = indicator.value;
@@ -92,7 +91,6 @@ indicator.addEventListener("change", () => {
     }
   })
   getMyChartPlease(yearOfData, justData, chart);
-  console.log(roundedData)
   return year
 })
 
@@ -137,16 +135,24 @@ const getMyAscendentChart = (years, data, ascendentChart) => {
 //pintar data ordenada que está guardada en indicatorData
 let yearOfDataOrdered = [];
 let justDataOrdered = [];
+let dataOfYear = [];
 const printSorted = (dataOrder) => {
   table.innerHTML = '';
   dataOrder.forEach(element => {
     const row = table.insertRow(0);
     const cellYear = row.insertCell(0);
     const cellData = row.insertCell(1);
+    if(element[1] !== '') {
+    let orderedData = Number(element[1]);
+    console.log(orderedData)
+    justDataOrdered= orderedData.toFixed(2);
+    } else {
+      justDataOrdered = element[1];
+    }
     cellYear.insertAdjacentHTML('afterbegin', `<tr><td>${element[0]}</td></tr>`)
-    cellData.insertAdjacentHTML('afterbegin', `<tr><td>${element[1]}<td></tr>`)
+    cellData.insertAdjacentHTML('afterbegin', `<tr><td>${justDataOrdered}<td></tr>`)
     yearOfDataOrdered.push(element[0])
-    justDataOrdered.push(element[1])
+    // justDataOrdered.push(justDataOrdered)
   })
   return yearOfDataOrdered, justDataOrdered
 }
@@ -200,18 +206,21 @@ whoAreWe.addEventListener('click', () => {
   informationOne.style.display = 'block';
   informationTwo.style.display = 'none';
   informationThree.style.display = 'none';
+  introduction.style.display = 'none';
 })
 
 whatWeDo.addEventListener('click', () => {
   informationTwo.style.display = 'block';
   informationOne.style.display = 'none';
   informationThree.style.display = 'none';
+  introduction.style.display = 'none';
 })
 
 contact.addEventListener('click', () => {
   informationThree.style.display = 'block';
   informationOne.style.display = 'none';
   informationTwo.style.display = 'none';
+  introduction.style.display = 'none';
 })
 
 const hamburguerButton = document.getElementById('bar');
