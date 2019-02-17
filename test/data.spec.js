@@ -648,12 +648,11 @@ describe('filterCountry', () => {
     expect(window.worldBank.filterCountry(tryData, `PER`)).toEqual(peruvianData);
   })
 })
-
 describe('filter', () => {
   it('Debería ser una función', () => {
     expect(typeof window.worldBank.filter).toBe('function');
   })
-  it('debería retornar un arreglo de indicadores para: filter (WORLDBANK, `prevalencia`)', () => {
+  it('debería retornar un arreglo de indicadores para: filter(minidata, `prevalencia`)', () => {
     expect(window.worldBank.filter(miniData, 'prevalencia')[1]).toEqual(miniData[1]);
   })
   describe('sort', () => {
