@@ -1,26 +1,15 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-/* const example = () => {
-  return 'example';
-};
-
-window.example = example; 
-*/
-
-
-
+//Funciones a testear
 window.worldBank = {
   filterCountry: (data, country) => {
     let countryName = [];
     for (let dataCountry in data) {
       // console.log(dataCountry, data[dataCountry].indicators)
       if (country === dataCountry) {
-        return countryName = dataCountry, data[dataCountry].indicators
+        countryName = (dataCountry, data[dataCountry].indicators)
+        return countryName
       }
     }
   },
-
   filter: (data, wordToCompare) => {
     let filteredIndicators = [];
     data.forEach(element => {
@@ -30,7 +19,6 @@ window.worldBank = {
     });
     return filteredIndicators;
   },
-
   sort: (data, sortOrder) => {
     let indicatorData = [];
     for (let i in data)
