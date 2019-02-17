@@ -8,35 +8,38 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  
-
 </head>
 
 <!-----PAGE1----->
+<body >
+  <main class="principalImg">
+    
 
-<body>
-
-  
-  <main>
     <header class="center" id="header">
-      <figure class="logo"><img src="./imagenes/Logo completo vertical.png"></figure>
-      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png" alt=""> </figure>
-
+      <figure class="logo"><img src="./imagenes/Logo completo.jpg"></figure>
+      <figure class="logoVert"><img src="./imagenes/Logo completo vertical.png" > </figure>
+      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png" > </figure>
       <div class="buttonHeader" id="buttonHeader">
         <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
         <button id="contact" class="info-button">Contacto</button>
       </div>
-    </nav>
     </header>
 
     <section id="introduction" >
+<div class = "paragraphIntroduction">     
 <h1>Bienvenida a DataFemme</h1>
 <p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
   con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
   para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
-<button id="buttonData">Ir a la Data</button>    
+  <figure class="principal"><img src="./imagenes/imgEstudiantesBNok-mobile.jpg" ></figure>
+
+  <button id="buttonData">Ir a la Data</button>  
+</div>     
+
 </section>
+
+</main>
 
 <!----Page 2--->    
 
@@ -55,10 +58,6 @@
       <article class="tableIndicator">
         <h2 id="countrySelected"></h2>
         <p>Elige el indicador que deseas explorar</p>
-        <figure class="mainFigure"> <img src="./imagenes/educacion.jpg"> </figure>
-        <figure class="mainFigure"> <img src="./imagenes/laboral.jpg"> </figure>
-        <figure class="mainFigure"> <img src="./imagenes/demografia.jpg"> </figure>
-        <figure id="mainFiguremobile" class="mainFiguremobile"> <img src="./imagenes/estudiantesmobile.jpg"> </figure>
 
         <button class="elements" id="education" value="educación"> Educación</button>
         <button class="elements" id="laboral" value="laboral"> Laboral</button>
@@ -66,13 +65,18 @@
         <select id="indicator"> </select>
       </article>
     </section>
-  </main>
 
 <!----Page 4--->    
   <section id="section-orderChart" class='hide'>
     <h1>Indicador</h1>
     <article>
       <h2 id="indicator-name"></h2>
+      <div id="chartBox">
+        <canvas id="chart">
+        </canvas>
+      </div>
+      <canvas id ="myChart"></canvas>
+      <div id="tableBox">
       <select name="" id="type-of-order">
         <option value="">Elige el orden del dato</option>
         <option class="order-option" value="ascendent">Descendente</option>
@@ -91,11 +95,8 @@
           </tbody>
         </table>
       </div>
-      <div>
-      <canvas id="chart">
-      </canvas>
     </div>
-    <canvas id ="myChart"></canvas>
+      
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
     <button class="button" id="chooseIndicator">Elegir otro indicador</button>
