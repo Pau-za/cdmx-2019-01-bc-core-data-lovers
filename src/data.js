@@ -33,5 +33,10 @@ window.worldBank = {
       })
     }
     return indicatorData
-  }
+  },
+  meanOfValues: (arrayOfValues) => {
+    arrayOfValues.reduce((a, b) => {
+      return (a+b)/arrayOfValues.length
+    })
+  } 
 }
