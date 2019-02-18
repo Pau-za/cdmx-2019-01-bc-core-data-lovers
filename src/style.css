@@ -47,7 +47,6 @@ section {
   font-size: 90%;
   border-radius: 10px;
   padding: .2%;
-  background-color: rgb(253, 155, 155);
   margin-bottom: 3%;
 }
 
@@ -78,6 +77,32 @@ td {
 section {
   margin: 0%;
   padding: 0%;
+}
+
+button {
+  cursor: pointer;
+}
+
+#font {
+  font-size: 1em
+}
+
+#mean-button {
+  background-color: rgb(253, 155, 155);
+}
+
+#mean-result {
+  border-color:  rgb(218, 92, 92);
+  border-style: solid;
+  text-align: center;
+  margin-left: 25%;
+  display: none;
+}
+
+.mean {
+  margin-right: 9%;
+  width: 65%;
+  font-size: 1em;
 }
 
 /* pantallas teléfonos móviles */
@@ -458,8 +483,7 @@ section {
     table {
       border-collapse: collapse;
       text-align: center;
-      margin: 10%;
-      /* margin: 5% 25% 5% 25%; */
+      margin-left: 30%;
     }
 
     #startButton,

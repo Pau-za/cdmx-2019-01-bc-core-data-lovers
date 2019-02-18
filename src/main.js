@@ -255,6 +255,7 @@ logoDataFemme.addEventListener('click', () => {
 })
 
 meanButton.addEventListener('click', () => {
+  meanResult.style.display = 'block';
   let dataValues = [];
   for(let i=0; i<justData.length; i ++){
     if(justData[i] !== ''){

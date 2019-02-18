@@ -67,6 +67,7 @@
     <h2>Indicador:</h2>
     <article>
       <h2 id="indicator-name"></h2>
+      <p id="font">(Datos obtenidos del <a href="https://www.bancomundial.org/">Banco Mundial de Desarrollo.)</a></p>
       <div id="chartBox">
         <canvas id="chart">
         </canvas>
@@ -78,8 +79,8 @@
         <option class="order-option" value="ascendent">Descendente</option>
         <option class="order-option" value="descendent">Ascendente</option>
       </select>
-      <button id="mean-button">Calcula el promedio</button>
-      <p id="mean-result"></p>
+      <button class="mean" id="mean-button">Calcula el promedio</button>
+      <p class="mean" id="mean-result"></p>
       <div>
         <table>
           <thead>
@@ -91,7 +92,6 @@
           <tbody id="indicator-table">
           </tbody>
         </table>
-        <p id="font">Datos obtenidos del <a href="https://www.bancomundial.org/">Banco Mundial de Desarrollo</a></p>
       </div>
     </div>
     </article>
