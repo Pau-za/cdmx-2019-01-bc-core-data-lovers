@@ -68,6 +68,7 @@ h1 {
   display: none;
 }
 
+
 td {
   border: 0.1em solid #3531310e;
   text-align: left;
@@ -170,7 +171,6 @@ section {
   img {
     height: auto;
     max-width: 100%;
-  }
 
   section {
     font-family: 'Montserrat', sans-serif;
@@ -345,7 +345,6 @@ section {
     margin-bottom: 1%;
     margin-top: 1%;
     padding-right: 30%;
-  }
 
   #bar {
     display: none;
@@ -475,8 +474,6 @@ section {
     border: none;
   }
 
-}
-
 /* pantalla desktops */
 /* @media only screen and (min-width: 1024px) {
   #header {
@@ -492,7 +489,7 @@ section {
   }
 
 
-  
+
   .logo {
     display: inline-block;
     width: 18%;
@@ -500,9 +497,9 @@ section {
     margin: 1%;
   }
 
-  .buttonHeader{
+  .buttonHeader {
     justify-content: right;
-    display:flex;
+    display: flex;
 
   }
 
@@ -521,11 +518,12 @@ section {
     margin-right: auto;
     width: 50%;
     font-size: 2em;
-  }  
+  }
 
-  #indicator-name{
+  #indicator-name {
     font-size: 1.5em;
   }
+
   .mainFigure {
     display: inline-block;
     width: 30%;
@@ -558,3 +556,4 @@ section {
     margin: 5% 25% 5% 25%;
  }
 } */
+

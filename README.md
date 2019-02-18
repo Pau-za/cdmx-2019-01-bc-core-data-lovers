@@ -1,3 +1,48 @@
+# Definición del Producto
+El presente proyecto fue denominado "Data Femme", cuyo propósito es facilitar el acceso a la base de datos del [Banco Mundial de Desarrollo](https://www.bancomundial.org/), ya que la ruta que debe de tomar el usuario en la página de la organización mencionada, es muy larga, y poco intuitiva. 
+Data Femme está pensada para que estudiantes e investigares de temas relacionados con género, puedan acceder de manera sencilla, intuitiva, y rápida a la base de datos del Banco Mundial de Desarrollo, para consultar los **Indicadores de Desarrollo** que el mismo trabaja. De esta manera las investigaciones no se verán frenadas por la búsqueda de información.
+Para cumplir con los objetivos mencionados, se realizó un prototipo de baja fidelidad, y uno de alta fidelidad.
+
+# Diseño de la Interfaz de Usuario
+### Prototipo de baja fidelidad
+A continuación se presenta el prototipo de baja fidelidad.
+![LFP_1]()
+![LFP_2]()
+![LFP_3]()
+
+### Prototipo de alta fidelidad
+Para conocer el prototipo de alta fidelidad del presente proyecto, haz click [aquí](https://www.figma.com/file/Fx7h2DR26JM2tW5bwAV68IfO/Data-Lovers-Colors?node-id=0%3A1).
+
+# Historias de Usuario
+### Definición de terminado
+La definición de terminado para todas las historias de usuario que se trabajaron en el presente proyecto fue:
+- Escribir y pasar el test de la/s función/es asociada/s a la historia de usuario
+- Escribir la función asociada a la historia de usuario
+- Desarrollar una interfaz amigable para el usuario
+- Realizar pruebas de usabilidad
+- Incorporar los cambios provenientes de la retroalimentación del usuario
+- Actualizar el readme, en lo referente a la historia de usuario trabajada en ese momento
+- Actualizar el repositorio, y verificar que no se haya afectado la funcionalidad
+
+### Historia de Usuario 1: Como estudiante/especialista en temas de género, quiero poder acceder a información relacionada con indicadores de desarrollo asociados con las mujeres en América Latina, de los ámbitos: educativo, laboral y demográfico.
+
+### Historia de Usuario 2: Yo, como usuario quiero poder ordenar los datos de cada indicador en forma ascendente y descendente, para poder conocer fácilmente los valores máximo y mínimo.
+
+### Historia de Usuario 3:
+
+### Historia de Usuario 4:
+
+### Historia de Usuario 5:
+
+# Pruebas de usabilidad:
+Durante las pruebas de usabilidad se observó que la navegación de la página no resultó ser totalmente intuitiva, ya que conforme iban apareciendo nuevos elementos de la página, después de que el usuario hacía click en alguna opción, estos aparecían fuera de la vista de la pantalla preexistente, y se iban acumulando en la parte inferior de la página. Muchas veces a los usuarios les tomó mucho tiempo encontrar el nuevo elemento para poder seguir navegando la página. Por ello decidimos agilizar la navegación por la página, ocultando secciones que no fueran esenciales para el usuario, ya que había aparecido una nueva sección que proporcionaba información distinta a la anterior. Asimismo, la existencia de botones que le permitieran al usuario volver al camino anterior fue necesaria.
+
+Por otro lado, también 
+
+
+
+
+------------------------------------------------------------------------------------------
 # Data Lovers
 
 ## Índice
