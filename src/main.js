@@ -21,11 +21,14 @@ const chooseIndicator = document.getElementById('chooseIndicator');
 const startButton = document.getElementById('startButton')
 const countrySelected = document.getElementById('countrySelected');
 const orderOption = document.getElementById('type-of-order');
+const meanButton = document.getElementById('mean-button');
+const meanResult = document.getElementById('mean-result');
 //information ids
 const hamburguerButton = document.getElementById('bar');
 const informationOne = document.getElementById('information-1');
 const informationTwo = document.getElementById('information-2');
 const informationThree = document.getElementById('information-3');
+const logoDataFemme = document.getElementById('logo-data-femme');
 //botones del nav
 const whoAreWe = document.getElementById('who-are-we');
 const whatWeDo = document.getElementById('what-we-do');
@@ -207,6 +210,9 @@ whoAreWe.addEventListener('click', () => {
   informationTwo.style.display = 'none';
   informationThree.style.display = 'none';
   introduction.style.display = 'none';
+  sectionCountry.style.display = 'none';
+  sectionType.style.display = 'none';
+  sectionOrderChart.style.display = 'none';
 })
 
 whatWeDo.addEventListener('click', () => {
@@ -214,6 +220,9 @@ whatWeDo.addEventListener('click', () => {
   informationOne.style.display = 'none';
   informationThree.style.display = 'none';
   introduction.style.display = 'none';
+  sectionCountry.style.display = 'none';
+  sectionType.style.display = 'none';
+  sectionOrderChart.style.display = 'none';
 })
 
 contact.addEventListener('click', () => {
@@ -221,6 +230,9 @@ contact.addEventListener('click', () => {
   informationOne.style.display = 'none';
   informationTwo.style.display = 'none';
   introduction.style.display = 'none';
+  sectionCountry.style.display = 'none';
+  sectionType.style.display = 'none';
+  sectionOrderChart.style.display = 'none';
 })
 
 hamburguerButton.addEventListener('click', () => {
@@ -230,4 +242,26 @@ hamburguerButton.addEventListener('click', () => {
   } else {
     x.style.display = "block";
   }
+})
+
+logoDataFemme.addEventListener('click', () => {
+  introduction.style.display= 'block';
+  informationThree.style.display = 'none';
+  informationOne.style.display = 'none';
+  informationTwo.style.display = 'none';
+  sectionCountry.style.display = 'none';
+  sectionType.style.display = 'none';
+  sectionOrderChart.style.display = 'none';
+})
+
+meanButton.addEventListener('click', () => {
+  meanResult.style.display = 'block';
+  let dataValues = [];
+  for(let i=0; i<justData.length; i ++){
+    if(justData[i] !== ''){
+  dataValues.push(Number(justData[i]))
+    }
+  }
+  let result = window.worldBank.meanOfValues(dataValues);
+  meanResult.innerHTML = result.toFixed(2);
 })

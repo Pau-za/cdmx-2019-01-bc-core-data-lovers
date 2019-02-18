@@ -635,6 +635,8 @@ const orderedDataDescendent = [
   ["1989", ""],
 ]
 
+const arr = [2, 4, 6, 3, 9];
+
 describe('worldBank', () => {
   it('Debería ser un objeto', () => {
     expect(typeof window.worldBank).toBe('object');
@@ -665,5 +667,13 @@ describe('filter', () => {
     it('Debería retornar un arreglo de datos ordenados de forma descendente para: sort(dataToSort, `descendent`)', () => {
       expect(window.worldBank.sort(dataToSort, `descendent`)).toEqual(orderedDataDescendent);
     });
+  })
+  describe('meanOfValues', () => {
+    it('debería ser una función', () => {
+      expect(typeof window.worldBank.meanOfValues).toBe('function');
+    })
+    it ('Debería retornar el promedio: 4.8, para meanOfValues(arr)', () => {
+      expect(window.worldBank.meanOfValues(arr)).toEqual(4.8);
+    })
   })
 })

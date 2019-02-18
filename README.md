@@ -6,9 +6,11 @@ Para cumplir con los objetivos mencionados, se realizó un prototipo de baja fid
 # Diseño de la Interfaz de Usuario
 ### Prototipo de baja fidelidad
 A continuación se presenta el prototipo de baja fidelidad.
-![LFP_1]()
-![LFP_2]()
-![LFP_3]()
+![LFP_1](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers/blob/master/src/imagenes/prototipo%20baja/LFP_1.PNG)
+
+![LFP_2](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers/blob/master/src/imagenes/prototipo%20baja/LFP_2.PNG)
+
+![LFP_3](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers/blob/master/src/imagenes/prototipo%20baja/LFP_3.PNG)
 
 ### Prototipo de alta fidelidad
 Para conocer el prototipo de alta fidelidad del presente proyecto, haz click [aquí](https://www.figma.com/file/Fx7h2DR26JM2tW5bwAV68IfO/Data-Lovers-Colors?node-id=0%3A1).
@@ -35,9 +37,11 @@ La definición de terminado para todas las historias de usuario que se trabajaro
 ### Historia de Usuario 5:
 
 # Pruebas de usabilidad:
-Durante las pruebas de usabilidad se observó que la navegación de la página no resultó ser totalmente intuitiva, ya que conforme iban apareciendo nuevos elementos de la página, después de que el usuario hacía click en alguna opción, estos aparecían fuera de la vista de la pantalla preexistente, y se iban acumulando en la parte inferior de la página. Muchas veces a los usuarios les tomó mucho tiempo encontrar el nuevo elemento para poder seguir navegando la página. Por ello decidimos agilizar la navegación por la página, ocultando secciones que no fueran esenciales para el usuario, ya que había aparecido una nueva sección que proporcionaba información distinta a la anterior. Asimismo, la existencia de botones que le permitieran al usuario volver al camino anterior fue necesaria.
+Durante las pruebas de usabilidad se observó que la navegación de la página no resultó ser totalmente intuitiva, ya que conforme iban apareciendo nuevos elementos de la página, después de que el usuario hacía click en alguna opción, estos aparecían fuera de la vista de la pantalla preexistente, y se iban acumulando en la parte inferior de la página. Muchas veces a los usuarios les tomó mucho tiempo encontrar el nuevo elemento para poder seguir navegando la página. Por ello decidimos agilizar la navegación ocultando secciones que no fueran esenciales para el usuario, una vez que aparecía una nueva sección que proporcionaba información distinta a la anterior. Asimismo, la existencia de botones que le permitieran al usuario volver al camino anterior fue necesaria.
 
-Por otro lado, también 
+Otro detalle que encontramos en las pruebas de usabilidad fue que los datos que mostraba la página en algunos casos tenían muchos decimales, mismos que no eran de utilidad para los usuarios, así que decidimos reducir la cantidad de decimales que se mostrara en la tabla, a únicamente dos.
+
+Aunque la primera sección que se muestra en la página tiene una breve explicación del propósito de la página, y la fuente de la que se tomaron los datos que se presentan en la misma, algunos usuarios consideraron que era necesario recordar la información de la fuente de datos al final de las tablas de datos.
 
 
 
