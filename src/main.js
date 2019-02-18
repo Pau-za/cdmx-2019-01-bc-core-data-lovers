@@ -21,6 +21,8 @@ const chooseIndicator = document.getElementById('chooseIndicator');
 const startButton = document.getElementById('startButton')
 const countrySelected = document.getElementById('countrySelected');
 const orderOption = document.getElementById('type-of-order');
+const meanButton = document.getElementById('mean-button');
+const meanResult = document.getElementById('mean-result');
 //information ids
 const hamburguerButton = document.getElementById('bar');
 const informationOne = document.getElementById('information-1');
@@ -250,4 +252,15 @@ logoDataFemme.addEventListener('click', () => {
   sectionCountry.style.display = 'none';
   sectionType.style.display = 'none';
   sectionOrderChart.style.display = 'none';
+})
+
+meanButton.addEventListener('click', () => {
+  let dataValues = [];
+  for(let i=0; i<justData.length; i ++){
+    if(justData[i] !== ''){
+  dataValues.push(Number(justData[i]))
+    }
+  }
+  let result = window.worldBank.meanOfValues(dataValues);
+  meanResult.innerHTML = result.toFixed(2);
 })

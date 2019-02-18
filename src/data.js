@@ -35,8 +35,10 @@ window.worldBank = {
     return indicatorData
   },
   meanOfValues: (arrayOfValues) => {
-    arrayOfValues.reduce((a, b) => {
-      return (a+b)/arrayOfValues.length
+    let sum = arrayOfValues.reduce((a, b) => {
+      return a+b
     })
+    let totalValues = arrayOfValues.length
+    return sum/totalValues
   } 
 }
