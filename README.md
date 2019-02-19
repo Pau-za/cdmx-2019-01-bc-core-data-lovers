@@ -6,6 +6,7 @@ Para cumplir con los objetivos mencionados, se realizó un prototipo de baja fid
 # Diseño de la Interfaz de Usuario
 ### Prototipo de baja fidelidad
 A continuación se presenta el prototipo de baja fidelidad.
+
 ![LFP_1](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers/blob/master/src/imagenes/prototipo%20baja/LFP_1.PNG)
 
 ![LFP_2](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers/blob/master/src/imagenes/prototipo%20baja/LFP_2.PNG)
@@ -30,19 +31,43 @@ La definición de terminado para todas las historias de usuario que se trabajaro
 
 ### Historia de Usuario 2: Yo, como usuario quiero poder ordenar los datos de cada indicador en forma ascendente y descendente, para poder conocer fácilmente los valores máximo y mínimo.
 
-### Historia de Usuario 3:
+### Historia de Usuario 3: Yo, como usuario quiero observar los datos de los indicadores graficados, para visualizar su comportamiento a través de los años
 
-### Historia de Usuario 4:
+### Historia de Usuario 4: Yo, como usuario quiero poder seleccionar los indicadores referentes a un país en particular (México, Brasil, Chile, Perú), para poder comparar el mismo indicador entre países distintos de América Latina.
 
-### Historia de Usuario 5:
+### Historia de Usuario 5: Yo, como usuario quiero poder obtener el promedio de los datos del indicador de mi interés para trabajar con información histórica sobre el desarrollo del país que estudio.
 
 # Pruebas de usabilidad:
-Durante las pruebas de usabilidad se observó que la navegación de la página no resultó ser totalmente intuitiva, ya que conforme iban apareciendo nuevos elementos de la página, después de que el usuario hacía click en alguna opción, estos aparecían fuera de la vista de la pantalla preexistente, y se iban acumulando en la parte inferior de la página. Muchas veces a los usuarios les tomó mucho tiempo encontrar el nuevo elemento para poder seguir navegando la página. Por ello decidimos agilizar la navegación ocultando secciones que no fueran esenciales para el usuario, una vez que aparecía una nueva sección que proporcionaba información distinta a la anterior. Asimismo, la existencia de botones que le permitieran al usuario volver al camino anterior fue necesaria.
+Durante las pruebas de usabilidad se observó que la navegación de la página no resultó ser totalmente intuitiva, ya que conforme iban apareciendo nuevos elementos de la página, después de que el usuario hacía click en alguna opción, estos aparecían fuera de la vista de la pantalla preexistente, y se iban acumulando en la parte inferior de la página. Muchas veces a los usuarios les tomó mucho tiempo encontrar el nuevo elemento para poder seguir navegando en la página. Por ello decidimos agilizar la navegación ocultando secciones que no fueran esenciales para el usuario, una vez que aparecía una nueva sección que proporcionaba información distinta a la anterior. Asimismo, la existencia de botones que le permitieran al usuario volver al camino anterior fue necesaria.
 
 Otro detalle que encontramos en las pruebas de usabilidad fue que los datos que mostraba la página en algunos casos tenían muchos decimales, mismos que no eran de utilidad para los usuarios, así que decidimos reducir la cantidad de decimales que se mostrara en la tabla, a únicamente dos.
 
-Aunque la primera sección que se muestra en la página tiene una breve explicación del propósito de la página, y la fuente de la que se tomaron los datos que se presentan en la misma, algunos usuarios consideraron que era necesario recordar la información de la fuente de datos al final de las tablas de datos.
+Los usuarios recomendaron que en la primera página se mostrara la información sobre el propósito de la misma. Aunque la primera sección que se muestra la fuente de la que se tomaron los datos, algunos usuarios consideraron que era necesario recordar esta información en la sección donde se mostraban los datos.
 
+Se utilizaron colores en escala de grises en combinación con rosas, para transmitir confianza, seguridad, y empatizar con la mayoría de los usuarios, que son mujeres.
+
+El resultado final del proyecto se puede observar [aquí](https://pau-za.github.io/cdmx-2019-01-bc-core-data-lovers/src/).
+
+## Instalación
+
+1. Debes de realizar un :fork_and_knife:
+   [fork](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers) de nuestro repositorio.
+2. :arrow_down: [Clona](https://github.com/Pau-za/cdmx-2019-01-bc-core-data-lovers.git)
+   tu :fork_and_knife: a tu computadora (copia local).
+3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
+   asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
+4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
+   pruebas unitarias (unit tests) con el comando `npm run test`.
+
+## Colaboradoras
+
+En el presente proyecto, trabajamos las siguientes personas:
+- Dueña del repositorio: [Pau-za](https://github.com/Pau-za)
+- Colaboradora: [Andrea0611](https://github.com/Andrea0611)
+
+## Agradecimientos
+
+Agradecemos a [Jonhks](https://github.com/Jonhks), por haber acudido siempre a nuestros llamados de auxilio; a Silvana por habernos apoyado en el testeo; a nuestro squad por habernos por la ayuda y la paciencia durante el desarrollo del proyecto; y al resto de nuestras compañeras de **laboratoria**, que supieron escucharnos siempre que sentimos que perdíamos el rumbo.
 
 
 
@@ -557,23 +582,23 @@ compañera:
 
 ## Checklist
 
-- [ ] Usa VanillaJS.
-- [ ] No hace uso de `this`.
-- [ ] Pasa linter (`npm pretest`)
-- [ ] Pasa tests (`npm test`)
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+- [x] Usa VanillaJS.
+- [x] No hace uso de `this`.
+- [x] Pasa linter (`npm pretest`)
+- [x] Pasa tests (`npm test`)
+- [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
       lines y branches.
-- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-- [ ] Incluye historias de usuario en `README.md`.
-- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+- [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+- [x] Incluye historias de usuario en `README.md`.
+- [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
       `README.md`.
-- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+- [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
       en `README.md`.
-- [ ] Incluye el listado de problemas que detectaste a través de tests de
+- [x] Incluye el listado de problemas que detectaste a través de tests de
       usabilidad en el `README.md`.
-- [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-- [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-- [ ] UI: Permite filtrar data en base a una condición.
+- [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+- [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+- [x] UI: Permite filtrar data en base a una condición.
 
 ## Checklist (Opcional)
 
