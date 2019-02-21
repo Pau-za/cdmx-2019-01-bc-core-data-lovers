@@ -672,7 +672,7 @@ describe('filter', () => {
     it('debería ser una función', () => {
       expect(typeof window.worldBank.meanOfValues).toBe('function');
     })
-    it ('Debería retornar el promedio: 4.8, para meanOfValues(arr)', () => {
+    it('Debería retornar el promedio: 4.8, para meanOfValues(arr)', () => {
       expect(window.worldBank.meanOfValues(arr)).toEqual(4.8);
     })
   })

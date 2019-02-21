@@ -38,8 +38,7 @@ const buttonData = document.getElementById('buttonData');
 const sectionCountry = document.getElementById('section-country');
 const introduction = document.getElementById('introduction');
 
-
-//Ponemos valore inicial en el select
+//Ponemos valor inicial en el select
 indicator.insertAdjacentHTML("beforeend", '<option value="">Selecciona un indicador</option>');
 
 //función que imprime nombres de los indicadores en el select
@@ -67,7 +66,7 @@ for (let i = 0; i < country.length; i++) {
   })
 }
 
-//evento click en los botones
+//evento click en los botones del tipo de indicador
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', () => {
     indicator.innerHTML = '';
@@ -82,7 +81,7 @@ for (let i = 0; i < elements.length; i++) {
   })
 }
 
-//función para imprimir datos de variable en el html
+//función para imprimir datos del indicador en el html cuando usuario elige uno
 indicator.addEventListener("change", () => {
   sectionOrderChart.style.display = 'block';
   sectionCountry.style.display = 'none';
@@ -118,7 +117,7 @@ indicator.addEventListener("change", () => {
   return year
 })
 
-//función de gráfica normal
+//función de gráfica
 const getMyChartPlease = (yearOfData, justData, chart) => {
   //Pintando la gráfica
   let lineChartData = new window.Chart(chart, {
@@ -135,24 +134,6 @@ const getMyChartPlease = (yearOfData, justData, chart) => {
   })
   return lineChartData;
 }
-
-// //Función de la gráfica ascendente
-// const ascendentChart = document.getElementById('ascendent-chart');
-// const getMyAscendentChart = (years, data, ascendentChart) => {
-//   let lineAscendentChart = new Chart(ascendentChart, {
-//     type: 'line',
-//     data: {
-//       labels: yearOfDataOrdered,
-//       datasets: [{
-//         label: 'Datos del indicador',
-//         backgroundColor: 'rgb(255, 99, 132)',
-//         borderColor: 'rgb(255, 99, 132)',
-//         data: justDataOrdered,
-//       }]
-//     }
-//   })
-//   return lineAscendentChart;
-// }
 
 //pintar data ordenada que está guardada en indicatorData
 const printSorted = (dataOrder) => {
@@ -180,24 +161,21 @@ orderOption.addEventListener('change', () => {
   chart.innerHTML = '';
   dataOrder = window.worldBank.sort(year, orderOption.value)
   printSorted(dataOrder);
-  // getMyAscendentChart(yearOfDataOrdered, justDataOrdered, chart)
 })
 
-
-//evento de boton data
+//evento de boton "ir a la data"
 buttonData.addEventListener('click', () => {
   sectionCountry.style.display = 'block';
   introduction.style.display = 'none';
-
 })
 
-// boton startButton
+//evento boton startButton
 startButton.addEventListener('click', () => {
   introduction.style.display = 'block';
   sectionOrderChart.style.display = 'none';
 })
 
-// boton chooseIndicator
+//evento boton chooseIndicator
 chooseIndicator.addEventListener('click', () => {
   sectionCountry.style.display = 'block';
   sectionType.style.display = 'block';
@@ -215,6 +193,7 @@ whoAreWe.addEventListener('click', () => {
   sectionOrderChart.style.display = 'none';
 })
 
+//Evento botón Qué hacemos?
 whatWeDo.addEventListener('click', () => {
   informationTwo.style.display = 'block';
   informationOne.style.display = 'none';
@@ -225,6 +204,7 @@ whatWeDo.addEventListener('click', () => {
   sectionOrderChart.style.display = 'none';
 })
 
+//evento botón contacto
 contact.addEventListener('click', () => {
   informationThree.style.display = 'block';
   informationOne.style.display = 'none';
@@ -235,6 +215,7 @@ contact.addEventListener('click', () => {
   sectionOrderChart.style.display = 'none';
 })
 
+//Función de botón de hamburguesa
 hamburguerButton.addEventListener('click', () => {
   let x = document.getElementById("buttonHeader");
   if (x.style.display === "block") {
@@ -244,8 +225,9 @@ hamburguerButton.addEventListener('click', () => {
   }
 })
 
+// Evento logo como botón que lleva a inicio
 logoDataFemme.addEventListener('click', () => {
-  introduction.style.display= 'block';
+  introduction.style.display = 'block';
   informationThree.style.display = 'none';
   informationOne.style.display = 'none';
   informationTwo.style.display = 'none';
@@ -254,12 +236,13 @@ logoDataFemme.addEventListener('click', () => {
   sectionOrderChart.style.display = 'none';
 })
 
+//Evento botón de promedio
 meanButton.addEventListener('click', () => {
   meanResult.style.display = 'block';
   let dataValues = [];
-  for(let i=0; i<justData.length; i ++){
-    if(justData[i] !== ''){
-  dataValues.push(Number(justData[i]))
+  for (let i = 0; i < justData.length; i++) {
+    if (justData[i] !== '') {
+      dataValues.push(Number(justData[i]))
     }
   }
   let result = window.worldBank.meanOfValues(dataValues);
