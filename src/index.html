@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-  <meta charset="utf-8">
+  <meta lang="es" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
@@ -11,12 +11,13 @@
 </head>
 
 <!-----PAGE1----->
-<body >
+
+<body>
   <main class="principalImg">
     <header class="center" id="header">
-      <figure class="logo" id = "logo-data-femme"><img src="./imagenes/Logo completo.jpg"></figure>
-      <figure class="logoVert"><img src="./imagenes/Logo completo vertical.png" > </figure>
-      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png" > </figure>
+      <figure class="logo" id="logo-data-femme"><img src="./imagenes/Logo completo.jpg"></figure>
+      <figure class="logoVert"><img src="./imagenes/Logo completo vertical.png"> </figure>
+      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png"> </figure>
       <div class="buttonHeader" id="buttonHeader">
         <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
@@ -24,42 +25,42 @@
       </div>
     </header>
 
- <section id="introduction" >
-<div class = "paragraphIntroduction">     
-<h1>Bienvenida a DataFemme</h1>
-<p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
-  con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
-  para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
-  <figure class="principal"><img src="./imagenes/imgEstudiantesBNok-mobile.jpg" ></figure>
+    <section id="introduction">
+      <div class="paragraphIntroduction">
+        <h1>Bienvenida a DataFemme</h1>
+        <p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
+          con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
+          para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
+        <figure class="principal"><img src="./imagenes/imgEstudiantesBNok-mobile.jpg"></figure>
 
-  <button id="buttonData">Ir a la Data</button>  
-</div>     
+        <button id="buttonData">Ir a la Data</button>
+      </div>
 
-</section>
-
-</main>
-
-<!----Page 2--->    
-    <section id="section-country" class="hide">
-      <h2>Paises</h2>
-      <p>Elige el país del que deseas cosultar información</p>
-      <button class="country" value="BRA" name="Brasil">Brasil</button>
-      <button class="country" value="CHL" name="Chile">Chile</button>
-      <button class="country" value="MEX" name="México">México</button>
-      <button class="country" value="PER" name="Perú">Perú</button>
     </section>
 
+  </main>
 
-    <!----Page 3--->
-    <section id="section-type" class="hide">
-      <article class="tableIndicator">
-        <p>Elige el indicador que deseas explorar</p>
-        <button class="elements" id="education" value="educación"> Educación</button>
-        <button class="elements" id="laboral" value="laboral"> Laboral</button>
-        <button class="elements" id="demographic" value="población"> Demográfico </button>
-        <select id="indicator"> </select>
-      </article>
-    </section>
+  <!----Page 2--->
+  <section id="section-country" class="hide">
+    <h2>Paises</h2>
+    <p>Elige el país del que deseas cosultar información</p>
+    <button class="country" value="BRA" name="Brasil">Brasil</button>
+    <button class="country" value="CHL" name="Chile">Chile</button>
+    <button class="country" value="MEX" name="México">México</button>
+    <button class="country" value="PER" name="Perú">Perú</button>
+  </section>
+
+
+  <!----Page 3--->
+  <section id="section-type" class="hide">
+    <article class="tableIndicator">
+      <p>Elige el indicador que deseas explorar</p>
+      <button class="elements" id="education" value="educación"> Educación</button>
+      <button class="elements" id="laboral" value="laboral"> Laboral</button>
+      <button class="elements" id="demographic" value="población"> Demográfico </button>
+      <select id="indicator"> </select>
+    </article>
+  </section>
 
   <!----Page 4--->
   <section id="section-orderChart" class="hide">
@@ -73,26 +74,26 @@
         </canvas>
       </div>
       <div id="tableBox">
-      <select id="type-of-order">
-        <option value="">Elige el orden del dato</option>
-        <option class="order-option" value="ascendent">Descendente</option>
-        <option class="order-option" value="descendent">Ascendente</option>
-      </select>
-      <button class="mean" id="mean-button">Calcula el promedio</button>
-      <p class="mean" id="mean-result"></p>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <td><strong>Año</strong> </td>
-              <td><strong>Dato</strong></td>
-            </tr>
-          </thead>
-          <tbody id="indicator-table">
-          </tbody>
-        </table>
+        <select id="type-of-order">
+          <option value="">Elige el orden del dato</option>
+          <option class="order-option" value="ascendent">Descendente</option>
+          <option class="order-option" value="descendent">Ascendente</option>
+        </select>
+        <button class="mean" id="mean-button">Calcula el promedio</button>
+        <p class="mean" id="mean-result"></p>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <td><strong>Año</strong> </td>
+                <td><strong>Dato</strong></td>
+              </tr>
+            </thead>
+            <tbody id="indicator-table">
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </article>
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
     <button class="button" id="chooseIndicator">Elegir otro indicador</button>
