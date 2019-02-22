@@ -9,15 +9,14 @@
   <!-- <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="stylejson.css">
 
 </head>
-
-<!-----PAGE1----->
 
 <body>
   <header class="header" id="header">
     <nav>
-      <h1 class="header" id="name-page">Bienvenida a FemData</h1>
+      <h1 class="header" id="name-page">FemData</h1>
       <button class="header" id="why-women">¿Por qué mujeres?</button>
     </nav>
   </header>
@@ -32,10 +31,10 @@
       pero esto solamente será posible si conocemos las realidades de la Región. Si quieres conocer
       más al respecto da click <a href="#women-in-latam">aquí</a>.
     </p>
-    <button class="go-to-data">Ir a la Base de Datos</button>
+    <a href="./data_page.html">Comenzar a Explorar la Base de Datos</a>
   </section>
 
-  <section id="women-in-latam">
+  <div id="women-in-latam" class="hide">
     <h1>¿Por qué hacer estudios sobre mujeres?</h1>
     <p>Los estudios sobre Mujeres comenzaron en la década de 1970, con el auge de la tercera ola del movimiento
       feminista. El propósito de dichos estudios, era dar a conocer las
@@ -45,57 +44,9 @@
       <img src="" alt="">
       <a href="https://www.freepik.es/fotos-vectores-gratis/acuarela">Vector de acuarela creado por freepik - www.freepik.es</a>
     <button class="go-to-data">Ir a la Base de Datos</button>
-  </section>
+      </div>
 
-  <section id="select-how-explore">
-    <h4>Elige cómo deseas explorar los datos:</h4>
-    <button id="by-country">Por País</button>
-    <button id="by-type">Por Tipo de Indicador</button>
-  </section>
-
-  <section id="start-by-country">
-    <h2>Paises</h2>
-    <p>Elige el país del que deseas cosultar información</p>
-    <button class="country" value="BRA" name="Brasil">Brasil</button>
-    <button class="country" value="CHL" name="Chile">Chile</button>
-    <button class="country" value="MEX" name="México">México</button>
-    <button class="country" value="PER" name="Perú">Perú</button>
-   
-  </section>
-
-  <section id="start-by-type">
-    <h2>Tipo de Indicador</h2>
-    <p>Elige el indicador que deseas explorar</p>
-    <button class="type-of-indicator" id="education" value="educación"> Educación</button>
-    <button class="type-of-indicator" id="laboral" value="laboral"> Laboral</button>
-    <button class="type-of-indicator" id="demographic" value="población"> Demográfico </button>
-  </section>
-
-  <section id="choose-an-indicator">
-    <h2>Elige un indicador</h2>
-    <select id="indicator-select"> </select>
-  </section>
-
-  <section id="indicator-information">
-      <h3 id="country-selected"></h3>
-      <h3 id="indicator-name-selected"></h3>
-      <h4>Ordena la tabla por dato:</h4>
-      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent"> Descendente
-      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent"> Ascendente
-      <button id="mean-button">Calcula el promedio</button>
-      <article id="mean-result"></article>
-      <table>
-          <thead>
-            <tr>
-              <td><strong>Año</strong> </td>
-              <td><strong>Dato</strong></td>
-            </tr>
-          </thead>
-          <tbody id="indicator-table">
-          </tbody>
-        </table>
-        <canvas id="line-chart"></canvas>
-  </section>
+       
   <!-- <main class="principalImg">
     <header class="center" id="header">
       <figure class="logo" id="logo-data-femme"><img src="./imagenes/Logo completo.jpg"></figure>

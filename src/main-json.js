@@ -4,19 +4,33 @@ fetch('./data/worldbank/worldbank.json').then(
   response => {
     return response.json();
   }).then(data => {
-  wbData = data;
+  return wbData = data;
 })
 
+//variable que sirve para cambiar de página...
+const ubication = window.location.href;
 
+//CÓDIGO DEL INICIO POR ELECCIÓN DE PAÍSES
+// trayendo los id de los botones de elección para explorar la data
+const byCountryButton = document.getElementById('by-country');
+const byTypeButton = document.getElementById('by-type');
 
+//id de secciones de elección explorar por país
+const startByCountry = document.getElementById('start-by-country');
 
+//evento de los botones de explorar la data
+byCountryButton.addEventListener('click', () => {
+  startByCountry.style.display= 'block';
+})
 //trayendo los botones de país por classname
 const country = document.getElementsByClassName('country');
 const countrySelected = document.getElementById('country-selected');
+const selectIndicatorType = document.getElementById('select-indicator-type');
 
 //evento click en los botones pais
 for (let i = 0; i < country.length; i++) {
   country[i].addEventListener('click', () => {
+    selectIndicatorType.style.display = 'block';
     let countryValue = country[i].value;
     if (countryValue === 'BRA') {
       countrySelected.innerHTML = 'País: Brasil'
@@ -42,10 +56,11 @@ const print = (indicatorName, indicatorCode) => {
   const result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
   indicatorSelect.insertAdjacentHTML('beforeend', result);
 }
-
+const chooseAnIndicator = document.getElementById('choose-an-indicator');
 //evento click en los botones del tipo de indicador
 for (let i = 0; i < typeOfIndicator.length; i++) {
   typeOfIndicator[i].addEventListener('click', () => {
+    chooseAnIndicator.style.display = 'block';
     indicatorSelect.innerHTML = '';
     let valueOfTypeIndicator = typeOfIndicator[i].value; // event.target.value
     filteredIndicators = window.worldBank.filter(filteredCountry, valueOfTypeIndicator);
@@ -62,10 +77,11 @@ const table = document.getElementById('indicator-table');
 let dataInformation = [];
 let data = [];
 let shortedData = [];
+const indicatorInformation = document.getElementById('indicator-information');
 
 //función para imprimir datos del indicador en el html cuando usuario elige uno
 indicatorSelect.addEventListener("change", () => {
-
+  indicatorInformation.style.display='block';
   document.getElementById('indicator-name-selected').innerHTML = '';
   table.innerHTML = '';
   let indicatorCode = indicatorSelect.value;
@@ -141,13 +157,23 @@ const printSorted = (dataOrder) => {
 
 //trayendo select de las opciones ordenar data
 const orderByData = document.getElementsByClassName('order-by-data');
+const descOrder = document.getElementById('order-data-desc');
+const ascOrder = document.getElementById('order-data-asc');
 //evento de la opción a ordenar
 for (let i = 0; i < orderByData.length; i++) {
   orderByData[i].addEventListener('click', () => {
+    if(orderByData[i].checked==true){
+      orderByData[i].checked=false;
+    };
     dataOrder = window.worldBank.sort(dataInformation, orderByData[i].value)
     printSorted(dataOrder);
   })
 }
+
+//función para limpiar radio
+// const unselect = document.getElementById('unselect');
+
+// unselect.addEventListener('click')
 
 // id de promedio
 const meanButton = document.getElementById('mean-button');

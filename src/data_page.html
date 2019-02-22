@@ -1,16 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>variables</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Explora Paises</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="stylejson.css">
 </head>
+
 <body>
-    <p id="indicator-result"></p>
-    <button id="startButton">Inicio</button>
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="data.js"></script>
-    <script src="main_data_page.js"></script>
+  <header class="header" id="header">
+    <nav>
+      <h1 class="header" id="name-page">FemData</h1>
+      <button class="header" id="why-women">¿Por qué mujeres?</button>
+    </nav>
+  </header>
+
+  <section id="select-how-explore">
+    <h4>Elige cómo deseas explorar los datos:</h4>
+    <button id="by-country">Por País</button>
+    <button id="by-type">Por Tipo de Indicador</button>
+  </section>
+
+  <section id="start-by-country" class="hide">
+    <h2>Paises</h2>
+    <p>Elige el país del que deseas cosultar información</p>
+    <button title="Brasil" class="country" value="BRA" name="Brasil">Brasil</button>
+    <button title="Chile" class="country" value="CHL" name="Chile">Chile</button>
+    <button title="México" class="country" value="MEX" name="México">México</button>
+    <button title="Perú" class="country" value="PER" name="Perú">Perú</button>
+
+  </section>
+
+  <section id="select-indicator-type" class="hide">
+    <h2>Tipo de Indicador</h2>
+    <p>Elige el indicador que deseas explorar</p>
+    <button class="type-of-indicator" id="education" value="educación"> Educación</button>
+    <button class="type-of-indicator" id="laboral" value="laboral"> Laboral</button>
+    <button class="type-of-indicator" id="demographic" value="población"> Demográfico </button>
+  </section>
+
+  <section id="choose-an-indicator" class="hide">
+    <h2>Elige un indicador</h2>
+    <select id="indicator-select"> </select>
+  </section>
+
+  <section id="indicator-information" class="hide">
+    <h3 id="country-selected"></h3>
+    <h3 id="indicator-name-selected"></h3>
+    <h4>Ordena la tabla por dato:</h4>
+    <label class="container">Descendente
+      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">  Ascendente
+      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent">
+      <span class="checkmark"></span>
+    </label>
+    <!-- <button id="unselect" onclick="unselect()">Limpiar Selección</button> -->
+    <button id="mean-button">Calcula el promedio</button>
+    <article id="mean-result"></article>
+    <table>
+      <thead>
+        <tr>
+          <td><strong>Año</strong> </td>
+          <td><strong>Dato</strong></td>
+        </tr>
+      </thead>
+      <tbody id="indicator-table">
+      </tbody>
+    </table>
+    <canvas id="line-chart"></canvas>
+  </section>
+  <script src="data.js"></script>
+  <script src="main-json.js"></script>
 </body>
+
 </html>
