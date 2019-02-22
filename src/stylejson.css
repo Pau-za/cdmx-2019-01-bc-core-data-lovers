@@ -1,3 +1,7 @@
+* {
+    background-image: url(https://image.freepik.com/vector-gratis/grupo-mujeres-fuertes-vector_53876-76216.jpg);
+}
+
 .hide {
   display: none;
 }
@@ -50,3 +54,5 @@
 .container input:checked ~ .checkmark:after {
     display: block;
   }
+
+  
