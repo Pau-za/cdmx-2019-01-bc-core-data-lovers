@@ -7,8 +7,8 @@
   <title>Data Lovers</title>
 
   <!-- <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 </head>
 
@@ -42,6 +42,8 @@
       <a href="http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-66662009000300002">teorías
         feministas</a> hasta esa época. Las feministas de entonces estaban convencidas de que tenía que haber
       un mejor futuro para las mujeres a nivel Internacional en relación a los derechos reproductivos (¿o no?).</p>
+      <img src="" alt="">
+      <a href="https://www.freepik.es/fotos-vectores-gratis/acuarela">Vector de acuarela creado por freepik - www.freepik.es</a>
     <button class="go-to-data">Ir a la Base de Datos</button>
   </section>
 
@@ -58,7 +60,7 @@
     <button class="country" value="CHL" name="Chile">Chile</button>
     <button class="country" value="MEX" name="México">México</button>
     <button class="country" value="PER" name="Perú">Perú</button>
-    <h3 id="country-selected"></h3>
+   
   </section>
 
   <section id="start-by-type">
@@ -72,6 +74,27 @@
   <section id="choose-an-indicator">
     <h2>Elige un indicador</h2>
     <select id="indicator-select"> </select>
+  </section>
+
+  <section id="indicator-information">
+      <h3 id="country-selected"></h3>
+      <h3 id="indicator-name-selected"></h3>
+      <h4>Ordena la tabla por dato:</h4>
+      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent"> Descendente
+      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent"> Ascendente
+      <button id="mean-button">Calcula el promedio</button>
+      <article id="mean-result"></article>
+      <table>
+          <thead>
+            <tr>
+              <td><strong>Año</strong> </td>
+              <td><strong>Dato</strong></td>
+            </tr>
+          </thead>
+          <tbody id="indicator-table">
+          </tbody>
+        </table>
+        <canvas id="line-chart"></canvas>
   </section>
   <!-- <main class="principalImg">
     <header class="center" id="header">
@@ -195,12 +218,16 @@
 
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="main.js"></script>-->
-  <script src="data.js"></script>
-  <script src="main-json.js"></script>
-</body> 
+  
 
   <!-- <footer>
 
 </footer> -->
+<footer id="footer">
+    <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de fondo creado por rawpixel.com - www.freepik.es</a>
+</footer>
+<script src="data.js"></script>
+  <script src="main-json.js"></script>
+</body> 
 
 </html>
