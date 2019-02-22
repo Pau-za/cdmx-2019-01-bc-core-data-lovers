@@ -2,18 +2,101 @@
 <html lang="es">
 
 <head>
-  <meta lang="es" charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 </head>
 
 <!-----PAGE1----->
 
 <body>
-  <main class="principalImg">
+  <header class="header" id="header">
+    <nav>
+      <h1 class="header" id="name-page">Bienvenida a FemData</h1>
+      <button class="header" id="why-women">¿Por qué mujeres?</button>
+    </nav>
+  </header>
+
+  <section id="meet-us">
+    <h1>¿Qué es FemData?</h1>
+    <p>FemData es una página que proporciona los datos de los indicadores de desarrollo del
+      <a href="https://www.bancomundial.org/">Banco Mundial</a> de una manera rápida,
+      sencilla, y eficaz.</p>
+    <p>FemData únicamente trabaja con los datos relacionados con las mujeres de Brasil, Chile, México
+      y Perú. Porque estamos seguras de que la situación de las mujeres en América Latina tiene que mejorar,
+      pero esto solamente será posible si conocemos las realidades de la Región. Si quieres conocer
+      más al respecto da click <a href="#women-in-latam">aquí</a>.
+    </p>
+    <button class="go-to-data">Ir a la Base de Datos</button>
+  </section>
+
+  <section id="women-in-latam">
+    <h1>¿Por qué hacer estudios sobre mujeres?</h1>
+    <p>Los estudios sobre Mujeres comenzaron en la década de 1970, con el auge de la tercera ola del movimiento
+      feminista. El propósito de dichos estudios, era dar a conocer las
+      <a href="http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-66662009000300002">teorías
+        feministas</a> hasta esa época. Las feministas de entonces estaban convencidas de que tenía que haber
+      un mejor futuro para las mujeres a nivel Internacional en relación a los derechos reproductivos (¿o no?).</p>
+      <img src="" alt="">
+      <a href="https://www.freepik.es/fotos-vectores-gratis/acuarela">Vector de acuarela creado por freepik - www.freepik.es</a>
+    <button class="go-to-data">Ir a la Base de Datos</button>
+  </section>
+
+  <section id="select-how-explore">
+    <h4>Elige cómo deseas explorar los datos:</h4>
+    <button id="by-country">Por País</button>
+    <button id="by-type">Por Tipo de Indicador</button>
+  </section>
+
+  <section id="start-by-country">
+    <h2>Paises</h2>
+    <p>Elige el país del que deseas cosultar información</p>
+    <button class="country" value="BRA" name="Brasil">Brasil</button>
+    <button class="country" value="CHL" name="Chile">Chile</button>
+    <button class="country" value="MEX" name="México">México</button>
+    <button class="country" value="PER" name="Perú">Perú</button>
+   
+  </section>
+
+  <section id="start-by-type">
+    <h2>Tipo de Indicador</h2>
+    <p>Elige el indicador que deseas explorar</p>
+    <button class="type-of-indicator" id="education" value="educación"> Educación</button>
+    <button class="type-of-indicator" id="laboral" value="laboral"> Laboral</button>
+    <button class="type-of-indicator" id="demographic" value="población"> Demográfico </button>
+  </section>
+
+  <section id="choose-an-indicator">
+    <h2>Elige un indicador</h2>
+    <select id="indicator-select"> </select>
+  </section>
+
+  <section id="indicator-information">
+      <h3 id="country-selected"></h3>
+      <h3 id="indicator-name-selected"></h3>
+      <h4>Ordena la tabla por dato:</h4>
+      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent"> Descendente
+      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent"> Ascendente
+      <button id="mean-button">Calcula el promedio</button>
+      <article id="mean-result"></article>
+      <table>
+          <thead>
+            <tr>
+              <td><strong>Año</strong> </td>
+              <td><strong>Dato</strong></td>
+            </tr>
+          </thead>
+          <tbody id="indicator-table">
+          </tbody>
+        </table>
+        <canvas id="line-chart"></canvas>
+  </section>
+  <!-- <main class="principalImg">
     <header class="center" id="header">
       <figure class="logo" id="logo-data-femme"><img src="./imagenes/Logo completo.jpg"></figure>
       <figure class="logoVert"><img src="./imagenes/Logo completo vertical.png"> </figure>
@@ -23,36 +106,33 @@
         <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
         <button id="contact" class="info-button">Contacto</button>
       </div>
-    </header>
+    </header> -->
 
-    <section id="introduction">
+  <!-- <section id="introduction">
       <div class="paragraphIntroduction">
         <h1>Bienvenida a DataFemme</h1>
         <p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
           con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
           para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
         <figure class="principal"><img src="./imagenes/imgEstudiantesBNok-mobile.jpg"></figure>
-
         <button id="buttonData">Ir a la Data</button>
       </div>
-
     </section>
-
-  </main>
+  </main> -->
 
   <!----Page 2--->
-  <section id="section-country" class="hide">
+  <!-- <section id="section-country" class="hide">
     <h2>Paises</h2>
     <p>Elige el país del que deseas cosultar información</p>
     <button class="country" value="BRA" name="Brasil">Brasil</button>
     <button class="country" value="CHL" name="Chile">Chile</button>
     <button class="country" value="MEX" name="México">México</button>
     <button class="country" value="PER" name="Perú">Perú</button>
-  </section>
+  </section> -->
 
 
   <!----Page 3--->
-  <section id="section-type" class="hide">
+  <!-- <section id="section-type" class="hide">
     <article class="tableIndicator">
       <p>Elige el indicador que deseas explorar</p>
       <button class="elements" id="education" value="educación"> Educación</button>
@@ -60,10 +140,10 @@
       <button class="elements" id="demographic" value="población"> Demográfico </button>
       <select id="indicator"> </select>
     </article>
-  </section>
+  </section> -->
 
   <!----Page 4--->
-  <section id="section-orderChart" class="hide">
+  <!-- <section id="section-orderChart" class="hide">
     <h2 id="countrySelected"></h2>
     <h2>Indicador:</h2>
     <article>
@@ -98,10 +178,10 @@
     <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
     <button class="button" id="chooseIndicator">Elegir otro indicador</button>
 
-  </section>
+  </section> -->
 
   <!--Page 3 Information-->
-  <section class="general-information" id="information-1">
+  <!-- <section class="general-information" id="information-1">
     <div>
       <h2>¿Quiénes somos?</h2>
       <p>Somos dos estudiantes de <a href="https://www.laboratoria.la/">Laboratoria</a> interesadas en aprender a
@@ -110,18 +190,18 @@
         la tecnología puede contribuir a generar impactos positivos en la sociedad.
       </p>
     </div>
-  </section>
+  </section> -->
 
-  <section class="general-information" id="information-2">
+  <!-- <section class="general-information" id="information-2">
     <div>
       <h2>¿Qué hacemos?</h2>
       <p>Desarrollamos páginas web para formar nuevas maneras de interactuar con la sociedad.
 
       </p>
     </div>
-  </section>
+  </section> -->
 
-  <section class="general-information" id="information-3">
+  <!-- <section class="general-information" id="information-3">
     <h2>Contacto</h2>
     <p>Si estás interesad@ en contactarnos, puedes enviarnos un correo electrónico:
       <br>
@@ -129,16 +209,25 @@
       <br>
       Andrea: <a href="mailto;andrea.parquiroz@gmail.com">andrea.parquiroz@gmail.com</a>
     </p>
-  </section>
+  </section> -->
 
   <!--FOOTER-->
-  <footer id="footer"></footer>
+  <!-- <footer id="footer"></footer>
 
   <div id="root"></div>
 
   <script src="./data/worldbank/worldbank.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-</body>
+  <script src="main.js"></script>-->
+  
+
+  <!-- <footer>
+
+</footer> -->
+<footer id="footer">
+    <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de fondo creado por rawpixel.com - www.freepik.es</a>
+</footer>
+<script src="data.js"></script>
+  <script src="main-json.js"></script>
+</body> 
 
 </html>
