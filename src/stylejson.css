@@ -11,32 +11,51 @@
       box-sizing: inherit;
     }
 
-    header{
+    header {
       background-color: #F2F2ED;
     }
 
     button {
       border: none;
     }
-    
+
     .hide {
       display: none;
     }
 
-    .header{
+    .header {
       background-color: #005C74;
       color: #F2F2ED;
     }
 
-    .country, .type-of-indicator, #mean-button {
+    .country,
+    .type-of-indicator,
+    #mean-button {
       background-color: #2D404F;
       color: #F2F2ED;
+    }
+
+    .nav {
+      width: 100%;
+    }
+
+    .bar {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    #burger {
+      margin-left: 45%;
+      margin-top: 3%;
     }
 
     #women-pic {
       align-content: center;
     }
-    
+
     /* The container */
     .container {
       display: block;
