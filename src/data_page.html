@@ -25,13 +25,15 @@
       </div>
       <div id="header-buttons">
         <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
-        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos por país</a>
-        <a href="" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por indicador</a>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+          por país</a>
+        <a href="" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
+          indicador</a>
         <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
       </div>
     </nav>
   </header>
-
+  <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
   <div id="women-pic">
     <img src="./img_json/women_diversity.jpg" alt="empowered women">
   </div>
@@ -64,6 +66,7 @@
   <section id="choose-an-indicator" class="hide">
     <h2>Elige un indicador</h2>
     <select id="indicator-select"> </select>
+    
   </section>
 
   <section id="indicator-information" class="hide">
@@ -79,19 +82,26 @@
       <span class="checkmark"></span>
     </label>
     <!-- <button id="unselect" onclick="unselect()">Limpiar Selección</button> -->
-    <button id="mean-button">Calcula el promedio</button>
-    <article id="mean-result"></article>
-    <table>
-      <thead>
-        <tr>
-          <td><strong>Año</strong> </td>
-          <td><strong>Dato</strong></td>
-        </tr>
-      </thead>
-      <tbody id="indicator-table">
-      </tbody>
-    </table>
-    <canvas id="line-chart"></canvas>
+    <div id="mean">
+      <button id="mean-button">Calcula el promedio</button>
+      <article id="mean-result"></article>
+    </div>
+    <div>
+      <canvas id="line-chart"></canvas>
+    </div>
+    <div id="table">
+      <table>
+        <thead> Tabla de datos
+          <tr>
+            <td><strong>Año</strong> </td>
+            <td><strong>Dato</strong></td>
+          </tr>
+        </thead>
+        <tbody id="indicator-table">
+        </tbody>
+      </table>
+    </div>
+
   </section>
   <script src="data.js"></script>
   <script src="main-json.js"></script>
