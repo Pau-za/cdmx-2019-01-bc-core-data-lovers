@@ -28,7 +28,7 @@ const countrySelected = document.getElementById('country-selected');
 const selectIndicatorType = document.getElementById('select-indicator-type');
 
 //evento click en los botones pais
-if (ubication == 'http://127.0.0.1:5500/src/data_page.html') {
+// if (ubication.includes== '/.data_page.html') {
   for (let i = 0; i < country.length; i++) {
     country[i].addEventListener('click', () => {
       selectIndicatorType.style.display = 'block';
@@ -46,22 +46,22 @@ if (ubication == 'http://127.0.0.1:5500/src/data_page.html') {
       return filteredCountry;
     })
   }
-}
+// }
 //trayendo el select donde se imprimirán los indicadores
 const indicatorSelect = document.getElementById('indicator-select');
 //trayendo los botones del tipo de indicador
 const typeOfIndicator = document.getElementsByClassName('type-of-indicator');
 
 //función que imprime nombres de los indicadores en el select
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   const print = (indicatorName, indicatorCode) => {
     const result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
     indicatorSelect.insertAdjacentHTML('beforeend', result);
   }
-}
+// }
 const chooseAnIndicator = document.getElementById('choose-an-indicator');
 //evento click en los botones del tipo de indicador
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   for (let i = 0; i < typeOfIndicator.length; i++) {
     typeOfIndicator[i].addEventListener('click', () => {
       chooseAnIndicator.style.display = 'block';
@@ -75,7 +75,7 @@ if (ubication == '/.data_page.html') {
       })
     })
   }
-}
+// }
 //trayendo el id table
 const table = document.getElementById('indicator-table');
 let dataInformation = [];
@@ -84,7 +84,7 @@ let shortedData = [];
 const indicatorInformation = document.getElementById('indicator-information');
 
 //función para imprimir datos del indicador en el html cuando usuario elige uno
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   indicatorSelect.addEventListener("change", () => {
     indicatorInformation.style.display = 'block';
     document.getElementById('indicator-name-selected').innerHTML = '';
@@ -117,9 +117,9 @@ if (ubication == '/.data_page.html') {
     getMyChartPlease(yearOfData, justData, lineChart);
     return dataInformation;
   })
-}
+// }
 //id de gráfica lineal
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   const lineChart = document.getElementById('line-chart').getContext('2d');
   //función de gráfica
   const getMyChartPlease = (yearOfData, justData, lineChart) => {
@@ -138,11 +138,11 @@ if (ubication == '/.data_page.html') {
     })
     return lineChartData;
   }
-}
+// }
 let yearOfDataOrdered = [];
 let justDataOrdered = [];
 //pintar data ordenada que está guardada en indicatorData
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   const printSorted = (dataOrder) => {
     table.innerHTML = '';
     dataOrder.forEach(element => {
@@ -161,13 +161,13 @@ if (ubication == '/.data_page.html') {
     })
     return yearOfDataOrdered, justDataOrdered;
   }
-}
+// }
 //trayendo select de las opciones ordenar data
 const orderByData = document.getElementsByClassName('order-by-data');
 const descOrder = document.getElementById('order-data-desc');
 const ascOrder = document.getElementById('order-data-asc');
 //evento de la opción a ordenar
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   for (let i = 0; i < orderByData.length; i++) {
     orderByData[i].addEventListener('click', () => {
       if (orderByData[i].checked == true) {
@@ -177,7 +177,7 @@ if (ubication == '/.data_page.html') {
       printSorted(dataOrder);
     })
   }
-}
+// }
 //función para limpiar radio
 // const unselect = document.getElementById('unselect');
 
@@ -187,7 +187,7 @@ if (ubication == '/.data_page.html') {
 const meanButton = document.getElementById('mean-button');
 const meanResult = document.getElementById('mean-result');
 //Evento botón de promedio
-if (ubication == '/.data_page.html') {
+// if (ubication == '/.data_page.html') {
   meanButton.addEventListener('click', () => {
 
     let dataValues = [];
@@ -199,4 +199,4 @@ if (ubication == '/.data_page.html') {
     let result = window.worldBank.meanOfValues(dataValues);
     meanResult.innerHTML = '= ' + result.toFixed(2);
   })
-}
+// }
