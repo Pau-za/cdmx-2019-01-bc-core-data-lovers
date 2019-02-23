@@ -38,13 +38,6 @@
     <img src="./img_json/women_diversity.jpg" alt="empowered women">
   </div>
 
-  <!-- <section id="select-how-explore">
-    <img id="general-image">
-    <h4>Elige cómo deseas explorar los datos:</h4>
-    <button id="by-country">Por País</button>
-    <button id="by-type">Por Tipo de Indicador</button>
-  </section> -->
-
   <section id="start-by-country">
     <h2>Paises</h2>
     <p>Elige el país del que deseas cosultar información</p>
@@ -52,7 +45,6 @@
     <button title="Chile" class="country" value="CHL" name="Chile">Chile</button>
     <button title="México" class="country" value="MEX" name="México">México</button>
     <button title="Perú" class="country" value="PER" name="Perú">Perú</button>
-
   </section>
 
   <section id="select-indicator-type" class="hide">
@@ -66,21 +58,11 @@
   <section id="choose-an-indicator" class="hide">
     <h2>Elige un indicador</h2>
     <select id="indicator-select"> </select>
-    
   </section>
 
   <section id="indicator-information" class="hide">
     <h3 id="country-selected"></h3>
     <h3 id="indicator-name-selected"></h3>
-    <h4>Ordena la tabla por dato:</h4>
-    <label class="container">Descendente
-      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent">
-      <span class="checkmark"></span>
-    </label>
-    <label class="container"> Ascendente
-      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent">
-      <span class="checkmark"></span>
-    </label>
     <!-- <button id="unselect" onclick="unselect()">Limpiar Selección</button> -->
     <div id="mean">
       <button id="mean-button">Calcula el promedio</button>
@@ -89,6 +71,15 @@
     <div>
       <canvas id="line-chart"></canvas>
     </div>
+    <h4>Ordena los datos de la tabla de forma:</h4>
+    <label class="container">Descendente
+      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container"> Ascendente
+      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent">
+      <span class="checkmark"></span>
+    </label>
     <div id="table">
       <table>
         <thead> Tabla de datos
