@@ -130,8 +130,8 @@ const indicatorInformation = document.getElementById('indicator-information');
         labels: yearOfData,
         datasets: [{
           label: 'Datos del indicador',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgb(0, 92, 116)',
+          borderColor: 'rgb(0, 92, 116)',
           data: justData,
         }]
       }
