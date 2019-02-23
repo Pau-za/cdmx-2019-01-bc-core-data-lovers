@@ -31,16 +31,16 @@ const backToStart = document.getElementById('back-to-start');
 
 //CÓDIGO DEL INICIO POR ELECCIÓN DE PAÍSES
 // trayendo los id de los botones de elección para explorar la data
-const byCountryButton = document.getElementById('by-country');
-const byTypeButton = document.getElementById('by-type');
+// const byCountryButton = document.getElementById('by-country');
+// const byTypeButton = document.getElementById('by-type');
 
 
 //id de secciones de elección explorar por país
 const startByCountry = document.getElementById('start-by-country');
 
-byCountryButton.addEventListener('click', () => {
-  startByCountry.style.display='block';
-})
+// byCountryButton.addEventListener('click', () => {
+//   startByCountry.style.display='block';
+// })
 //trayendo los botones de país por classname
 const country = document.getElementsByClassName('country');
 const countrySelected = document.getElementById('country-selected');
