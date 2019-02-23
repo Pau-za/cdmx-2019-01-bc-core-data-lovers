@@ -10,6 +10,25 @@ fetch('./data/worldbank/worldbank.json').then(
 //variable que sirve para cambiar de página...
 const ubication = window.location.href;
 
+const hamburguerButton = document.getElementById('burger');
+//función de botón de hamburguesa
+hamburguerButton.addEventListener('click', () => {
+  let menu = document.getElementById("header-buttons");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+})
+
+//hacer eventos de los botones del menú
+const whyWomen = document.getElementById('why-women');
+const startByCountryHeader = document.getElementById('country-start-header');
+const startByIndicatorHeader = document.getElementById('indicator-start-header');
+const backToStart = document.getElementById('back-to-start');
+
+
+
 //CÓDIGO DEL INICIO POR ELECCIÓN DE PAÍSES
 // trayendo los id de los botones de elección para explorar la data
 const byCountryButton = document.getElementById('by-country');

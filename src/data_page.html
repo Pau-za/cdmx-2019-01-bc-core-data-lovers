@@ -8,28 +8,42 @@
   <title>Explora Paises</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" href="stylejson.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
 </head>
 
 <body>
   <header class="main" id="header">
-
     <nav>
-      <h1 class="nav" id="name-page"><a href="./index.html">FemData</a> </h1>
-      <button class="header" id="why-women">¿Por qué mujeres?</button>
-      <button class="header" id="country-start-header">Explorar datos por país</button>
-      <button class="header" id="indicator-start-header">Explorar datos por indicador</button>
+      <div class="nav">
+        <h1 id="name-page">FemData</h1>
+        <div id="burger" title="menú">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div id="header-buttons">
+        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos por país</a>
+        <a href="" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por indicador</a>
+        <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
+      </div>
     </nav>
   </header>
 
-  <section id="select-how-explore">
+  <div id="women-pic">
+    <img src="./img_json/women_diversity.jpg" alt="empowered women">
+  </div>
+
+  <!-- <section id="select-how-explore">
     <img id="general-image">
     <h4>Elige cómo deseas explorar los datos:</h4>
     <button id="by-country">Por País</button>
     <button id="by-type">Por Tipo de Indicador</button>
-  </section>
+  </section> -->
 
-  <section id="start-by-country" class="hide">
+  <section id="start-by-country">
     <h2>Paises</h2>
     <p>Elige el país del que deseas cosultar información</p>
     <button title="Brasil" class="country" value="BRA" name="Brasil">Brasil</button>
