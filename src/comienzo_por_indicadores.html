@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Explora Paises</title>
+  <title>Indicadores de Desarrollo</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" href="stylejson.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="main" id="header">
+  <header>
     <nav>
       <div class="nav">
         <h1 id="name-page">FemData</h1>
@@ -27,27 +27,19 @@
         <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
         <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
           por país</a>
-        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
+        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar
+          datos por
           indicador</a>
         <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
-      </div>
-    </nav>
   </header>
+
   <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
-  <div id="women-pic">
+
+  <div class="women-pic">
     <img src="./img_json/women_diversity.jpg" alt="women_diversity">
   </div>
-
-  <section id="start-by-country">
-    <h2>Paises</h2>
-    <p>Elige el país del que deseas cosultar información</p>
-    <button title="Brasil" class="country" value="BRA" name="Brasil">Brasil</button>
-    <button title="Chile" class="country" value="CHL" name="Chile">Chile</button>
-    <button title="México" class="country" value="MEX" name="México">México</button>
-    <button title="Perú" class="country" value="PER" name="Perú">Perú</button>
-  </section>
-
-  <section id="select-indicator-type" class="hide">
+  
+  <section id="select-indicator-type">
     <h2>Tipo de Indicador</h2>
     <p>Elige el indicador que deseas explorar</p>
     <button class="type-of-indicator" id="education" value="educación"> Educación</button>
@@ -60,42 +52,9 @@
     <select id="indicator-select"> </select>
   </section>
 
-  <section id="indicator-information" class="hide">
-    <h3 id="country-selected"></h3>
-    <h3 id="indicator-name-selected"></h3>
-    <!-- <button id="unselect" onclick="unselect()">Limpiar Selección</button> -->
-    <div id="mean">
-      <button id="mean-button">Calcula el promedio</button>
-      <article id="mean-result"></article>
-    </div>
-    <div>
-      <canvas id="line-chart"></canvas>
-    </div>
-    <h4>Ordena los datos de la tabla de forma:</h4>
-    <label class="container">Descendente
-      <input class="order-by-data" id="order-data-desc" type="radio" value="ascendent">
-      <span class="checkmark"></span>
-    </label>
-    <label class="container"> Ascendente
-      <input class="order-by-data" id="order-data-asc" type="radio" value="descendent">
-      <span class="checkmark"></span>
-    </label>
-    <div id="table">
-      <table>
-        <thead> Tabla de datos
-          <tr>
-            <td><strong>Año</strong> </td>
-            <td><strong>Dato</strong></td>
-          </tr>
-        </thead>
-        <tbody id="indicator-table">
-        </tbody>
-      </table>
-    </div>
-
-  </section>
   <script src="data.js"></script>
-  <script src="main-json.js"></script>
+  <script src="main_data_page.js"></script>
+
 </body>
 
 </html>
