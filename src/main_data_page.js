@@ -26,7 +26,7 @@ const print = (indicatorName, indicatorCode) => {
     const result = `<option value = "${indicatorCode}" > ${indicatorName} </option>`
     indicatorSelect.insertAdjacentHTML('beforeend', result);
   }
-  
+
 //Obteniendo los indicadores de cada tipo, basado en la dataPer con el evento click en esos botones
 for (let i = 0; i < typeOfIndicator.length; i++) {
   typeOfIndicator[i].addEventListener('click', () => {
@@ -41,3 +41,4 @@ for (let i = 0; i < typeOfIndicator.length; i++) {
     })
   })
 }
+
