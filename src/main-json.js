@@ -8,7 +8,7 @@ fetch('./data/worldbank/worldbank.json').then(
 })
 
 //variable que sirve para cambiar de página...
-const ubication = window.location.href;
+// const ubication = window.location.href;
 
 const hamburguerButton = document.getElementById('burger');
 //función de botón de hamburguesa
@@ -21,32 +21,14 @@ hamburguerButton.addEventListener('click', () => {
   }
 })
 
-//hacer eventos de los botones del menú
-const whyWomen = document.getElementById('why-women');
-const startByCountryHeader = document.getElementById('country-start-header');
-const startByIndicatorHeader = document.getElementById('indicator-start-header');
-const backToStart = document.getElementById('back-to-start');
-
-
-
 //CÓDIGO DEL INICIO POR ELECCIÓN DE PAÍSES
-// trayendo los id de los botones de elección para explorar la data
-// const byCountryButton = document.getElementById('by-country');
-// const byTypeButton = document.getElementById('by-type');
-
-
-//id de secciones de elección explorar por país
-const startByCountry = document.getElementById('start-by-country');
-
-// byCountryButton.addEventListener('click', () => {
-//   startByCountry.style.display='block';
-// })
 //trayendo los botones de país por classname
 const country = document.getElementsByClassName('country');
 const countrySelected = document.getElementById('country-selected');
 const selectIndicatorType = document.getElementById('select-indicator-type');
 
 //evento click en los botones pais
+let filteredCountry = [];
 // if (ubication.includes== '/.data_page.html') {
   for (let i = 0; i < country.length; i++) {
     country[i].addEventListener('click', () => {
@@ -80,6 +62,7 @@ const typeOfIndicator = document.getElementsByClassName('type-of-indicator');
 // }
 const chooseAnIndicator = document.getElementById('choose-an-indicator');
 //evento click en los botones del tipo de indicador
+let filteredIndicators = [];
 // if (ubication == '/.data_page.html') {
   for (let i = 0; i < typeOfIndicator.length; i++) {
     typeOfIndicator[i].addEventListener('click', () => {
@@ -103,6 +86,8 @@ let shortedData = [];
 const indicatorInformation = document.getElementById('indicator-information');
 
 //función para imprimir datos del indicador en el html cuando usuario elige uno
+let yearOfData = [];
+let justData = [];
 // if (ubication == '/.data_page.html') {
   indicatorSelect.addEventListener("change", () => {
     indicatorInformation.style.display = 'block';
@@ -183,15 +168,17 @@ let justDataOrdered = [];
 // }
 //trayendo select de las opciones ordenar data
 const orderByData = document.getElementsByClassName('order-by-data');
-const descOrder = document.getElementById('order-data-desc');
-const ascOrder = document.getElementById('order-data-asc');
+// const descOrder = document.getElementById('order-data-desc');
+// const ascOrder = document.getElementById('order-data-asc');
+
 //evento de la opción a ordenar
+let dataOrder = [];
 // if (ubication == '/.data_page.html') {
   for (let i = 0; i < orderByData.length; i++) {
     orderByData[i].addEventListener('click', () => {
       if (orderByData[i].checked == true) {
         orderByData[i].checked = false;
-      };
+      }
       dataOrder = window.worldBank.sort(dataInformation, orderByData[i].value)
       printSorted(dataOrder);
     })
@@ -238,3 +225,7 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+buttonToTop.addEventListener('click', () => {
+  topFunction();
+})

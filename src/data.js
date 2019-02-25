@@ -3,7 +3,6 @@ window.worldBank = {
   filterCountry: (data, country) => {
     let countryName = [];
     for (let dataCountry in data) {
-      // console.log(dataCountry, data[dataCountry].indicators)
       if (country === dataCountry) {
         countryName = (dataCountry, data[dataCountry].indicators)
         return countryName
@@ -40,5 +39,17 @@ window.worldBank = {
     })
     let totalValues = arrayOfValues.length
     return sum / totalValues
+  },
+  indicatorInAllCountries: (data, indicatorName) => {
+    let dataOfTheIndicator = [];
+    for (let country in data) {
+      let countryInformation = (country, data[country].indicators);
+      countryInformation.forEach(element => {
+        if (element.indicatorName === indicatorName) {
+          dataOfTheIndicator.push(element);
+        }
+      })
+    }
+    return dataOfTheIndicator;
   }
 }
