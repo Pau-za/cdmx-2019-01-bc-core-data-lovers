@@ -32,7 +32,7 @@
           indicador</a>
         <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
       </div>
-      </nav>
+    </nav>
   </header>
 
   <button id="button-to-top" title="Go to top">Subir</button>
@@ -52,6 +52,24 @@
   <section id="choose-an-indicator" class="hide">
     <h2>Elige un indicador</h2>
     <select id="indicator-select"> </select>
+  </section>
+
+  <section id="table-section" class="hide">
+    <h2 id="indicator-name-selected"></h2>
+    <table>
+      <th>
+        <tr>
+          <td><strong>Año</strong></td>
+          <td><strong>Perú</strong></td>
+          <td><strong>México</strong></td>
+          <td><strong>Brasil</strong></td>
+          <td><strong>Chile</strong></td>
+        </tr>
+      </th>
+      <tbody>
+        <tr id="table-indicators-by-country"></tr>
+      </tbody>
+    </table>
   </section>
 
   <script src="data.js"></script>

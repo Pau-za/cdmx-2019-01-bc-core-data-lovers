@@ -50,6 +50,6 @@ window.worldBank = {
         }
       })
     }
-    return dataOfTheIndicator;
+    return dataOfTheIndicator
   }
 }
