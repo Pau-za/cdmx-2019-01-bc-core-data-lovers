@@ -9,6 +9,18 @@ fetch('./data/worldbank/worldbank.json').then(
   return wbData, dataPer;
 })
 
+//menú de hamburguesa
+const hamburguerButton = document.getElementById('burger');
+//función de botón de hamburguesa
+hamburguerButton.addEventListener('click', () => {
+  let menu = document.getElementById("header-buttons");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+})
+
 // FUNCIONES PARA EL DOCUMENTO DE LA EXPLORACIÓN DE LOS INDICADORES POR INDICADOR
 //después de que el usuario elije un indicador, aparece una gráfica indicando el porcentaje promedio
 //del indicador de cada país, y la tabla con la información completa de los indicadores por país, por año
@@ -161,4 +173,27 @@ indicatorSelect.addEventListener('change', () => {
   yearsArr = Object.keys(selectedIndicator[0].data);
   getMyChart(meanOfEachCountry, doughnutChart);
   return printIndicatorsByCountry(yearsArr, dataCountriesArr);
+})
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+const buttonToTop = document.getElementById('button-to-top');
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    buttonToTop.style.display = "block";
+  } else {
+    buttonToTop.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+buttonToTop.addEventListener('click', () => {
+  topFunction();
 })
