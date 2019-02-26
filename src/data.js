@@ -24,7 +24,7 @@ window.worldBank = {
       indicatorData.push([i, data[i]]);
     if (sortOrder === 'ascendent') {
       indicatorData.sort((a, b) => {
-        return a[1] - b[1]
+        return a[1] - b[1];
       })
     } else if (sortOrder === 'descendent') {
       indicatorData.sort((a, b) => {
@@ -35,10 +35,10 @@ window.worldBank = {
   },
   meanOfValues: (arrayOfValues) => {
     let sum = arrayOfValues.reduce((a, b) => {
-      return a + b
+      return a + b;
     })
-    let totalValues = arrayOfValues.length
-    return sum / totalValues
+    let totalValues = arrayOfValues.length;
+    return sum / totalValues;
   },
   indicatorInAllCountries: (data, indicatorName) => {
     let dataOfTheIndicator = [];
@@ -50,6 +50,6 @@ window.worldBank = {
         }
       })
     }
-    return dataOfTheIndicator;
+    return dataOfTheIndicator
   }
 }
