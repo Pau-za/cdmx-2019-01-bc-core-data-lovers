@@ -5,42 +5,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><img src="./img_json/girl_fist.png"> Data Lovers</title>
-
-  <!-- <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" href="stylejson.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 
 <body>
   <header class="main" id="header">
-
     <nav>
-      <div class="nav">
-        <h1 id="name-page">FemData</h1>
-        <div id="burger" title="menú">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div>
-      <div id="header-buttons">
-        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
-        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
-          por país</a>
-        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
-          indicador</a>
+      <div class="nav-wrapper  teal darken-3">
+        <a href="#" class="brand-logo right"> DataFem
+        </a>
+        <a href="#" class="sidenav-trigger" data-target="side-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+          </li>
+          <li>
+            <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+              por país</a>
+          </li>
+          <li>
+            <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+              id="indicator-start-header">Explorar datos por
+              indicador</a>
+          </li>
+        </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="side-menu">
+      <li>
+        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+          por país</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+          id="indicator-start-header">Explorar datos por
+          indicador</a>
+      </li>
+    </ul>
   </header>
 
   <div id="women-pic">
-    <img src="./img_json/women_diversity.jpg" alt="empowered women">
+    <img id="pic-women" src="./img_json/women_diversity_short.jpg" alt="empowered women">
   </div>
   <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
-  <section class="meet-us" id="meet-us">
+  <section class="meet-us container" id="meet-us">
     <h1 class="meet-us">¿Qué es FemData?</h1>
     <p class="meet-us">FemData es una página que proporciona los datos de los indicadores de desarrollo del
       <a class="meet-us" href="https://www.bancomundial.org/">Banco Mundial de Desarrollo</a> de una manera rápida,
@@ -51,7 +78,13 @@
     </p>
   </section>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var elems = document.querySelectorAll(".sidenav");
+      var instances = M.Sidenav.init(elems);
+    })
 
+  </script>
 
 
   <!-- <main class="principalImg">
