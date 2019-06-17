@@ -5,42 +5,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><img src="./img_json/girl_fist.png"> Data Lovers</title>
-
-  <!-- <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" href="stylejson.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 
 <body>
   <header class="main" id="header">
-
     <nav>
-      <div class="nav">
-        <h1 id="name-page">FemData</h1>
-        <div id="burger" title="menú">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div>
-      <div id="header-buttons">
-        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
-        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
-          por país</a>
-        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
-          indicador</a>
+      <div class="nav-wrapper  teal darken-3">
+        <a href="#" class="brand-logo right"> DataFem
+        </a>
+        <a href="#" class="sidenav-trigger" data-target="side-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+          </li>
+          <li>
+            <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+              por país</a>
+          </li>
+          <li>
+            <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+              id="indicator-start-header">Explorar datos por
+              indicador</a>
+          </li>
+        </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="side-menu">
+      <li>
+        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+          por país</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+          id="indicator-start-header">Explorar datos por
+          indicador</a>
+      </li>
+    </ul>
   </header>
 
   <div id="women-pic">
-    <img src="./img_json/women_diversity.jpg" alt="empowered women">
+    <img id="pic-women" src="./img_json/women_diversity_short.jpg" alt="empowered women">
   </div>
   <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
-  <section class="meet-us" id="meet-us">
+  <section class="meet-us container" id="meet-us">
     <h1 class="meet-us">¿Qué es FemData?</h1>
     <p class="meet-us">FemData es una página que proporciona los datos de los indicadores de desarrollo del
       <a class="meet-us" href="https://www.bancomundial.org/">Banco Mundial de Desarrollo</a> de una manera rápida,
@@ -51,137 +78,15 @@
     </p>
   </section>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var elems = document.querySelectorAll(".sidenav");
+      var instances = M.Sidenav.init(elems);
+    })
 
+  </script>
 
-
-  <!-- <main class="principalImg">
-    <header class="center" id="header">
-      <figure class="logo" id="logo-data-femme"><img src="./imagenes/Logo completo.jpg"></figure>
-      <figure class="logoVert"><img src="./imagenes/Logo completo vertical.png"> </figure>
-      <figure id="bar" class="bar"> <img src="./imagenes/navegador.png"> </figure>
-      <div class="buttonHeader" id="buttonHeader">
-        <button id="who-are-we" class="info-button">¿Quiénes somos?</button>
-        <button id="what-we-do" class="info-button">¿Qué hacemos?</button>
-        <button id="contact" class="info-button">Contacto</button>
-      </div>
-    </header> -->
-
-  <!-- <section id="introduction">
-      <div class="paragraphIntroduction">
-        <h1>Bienvenida a DataFemme</h1>
-        <p>Este proyecto tiene el propósito de que estudiantes de las ciencias sociales y humanidades accedan
-          con rapidez y seguridad a la base de datos del <a href="https://www.bancomundial.org/">Banco Mundial</a>
-          para facilitar las investigaciones relacionadas con las mujeres en América Latina.</p>
-        <figure class="principal"><img src="./imagenes/imgEstudiantesBNok-mobile.jpg"></figure>
-        <button id="buttonData">Ir a la Data</button>
-      </div>
-    </section>
-  </main> -->
-
-  <!----Page 2--->
-  <!-- <section id="section-country" class="hide">
-    <h2>Paises</h2>
-    <p>Elige el país del que deseas cosultar información</p>
-    <button class="country" value="BRA" name="Brasil">Brasil</button>
-    <button class="country" value="CHL" name="Chile">Chile</button>
-    <button class="country" value="MEX" name="México">México</button>
-    <button class="country" value="PER" name="Perú">Perú</button>
-  </section> -->
-
-
-  <!----Page 3--->
-  <!-- <section id="section-type" class="hide">
-    <article class="tableIndicator">
-      <p>Elige el indicador que deseas explorar</p>
-      <button class="elements" id="education" value="educación"> Educación</button>
-      <button class="elements" id="laboral" value="laboral"> Laboral</button>
-      <button class="elements" id="demographic" value="población"> Demográfico </button>
-      <select id="indicator"> </select>
-    </article>
-  </section> -->
-
-  <!----Page 4--->
-  <!-- <section id="section-orderChart" class="hide">
-    <h2 id="countrySelected"></h2>
-    <h2>Indicador:</h2>
-    <article>
-      <h2 id="indicator-name"></h2>
-      <p id="font">(Datos obtenidos del <a href="https://www.bancomundial.org/">Banco Mundial de Desarrollo.)</a></p>
-      <div id="chartBox">
-        <canvas id="chart">
-        </canvas>
-      </div>
-      <div id="tableBox">
-        <select id="type-of-order">
-          <option value="">Elige el orden del dato</option>
-          <option class="order-option" value="ascendent">Descendente</option>
-          <option class="order-option" value="descendent">Ascendente</option>
-        </select>
-        <button class="mean" id="mean-button">Calcula el promedio</button>
-        <p class="mean" id="mean-result"></p>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <td><strong>Año</strong> </td>
-                <td><strong>Dato</strong></td>
-              </tr>
-            </thead>
-            <tbody id="indicator-table">
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </article>
-    <button class="button" id="startButton" onclick="window.location.href='#'">Volver a inicio</button>
-    <button class="button" id="chooseIndicator">Elegir otro indicador</button>
-
-  </section> -->
-
-  <!--Page 3 Information-->
-  <!-- <section class="general-information" id="information-1">
-    <div>
-      <h2>¿Quiénes somos?</h2>
-      <p>Somos dos estudiantes de <a href="https://www.laboratoria.la/">Laboratoria</a> interesadas en aprender a
-        programar en Java Script
-        para desarrollar páginas web. Nos interesan los proyectos sociales, ya que estamos convencidas de que
-        la tecnología puede contribuir a generar impactos positivos en la sociedad.
-      </p>
-    </div>
-  </section> -->
-
-  <!-- <section class="general-information" id="information-2">
-    <div>
-      <h2>¿Qué hacemos?</h2>
-      <p>Desarrollamos páginas web para formar nuevas maneras de interactuar con la sociedad.
-
-      </p>
-    </div>
-  </section> -->
-
-  <!-- <section class="general-information" id="information-3">
-    <h2>Contacto</h2>
-    <p>Si estás interesad@ en contactarnos, puedes enviarnos un correo electrónico:
-      <br>
-      Paulina: <a href="mailto;molo_pau@hotmail.com">molo_pau@hotmail.com </a>
-      <br>
-      Andrea: <a href="mailto;andrea.parquiroz@gmail.com">andrea.parquiroz@gmail.com</a>
-    </p>
-  </section> -->
-
-  <!--FOOTER-->
-  <!-- <footer id="footer"></footer>
-
-  <div id="root"></div>
-
-  <script src="./data/worldbank/worldbank.js"></script>
-  <script src="main.js"></script>-->
-
-
-  <!-- <footer>
-
-</footer> -->
-  <footer id="footer">
+  <footer id="footer" class="container center-align">
     <a href="https://www.freepik.es/fotos-vectores-gratis/fondo">Vector de fondo creado por rawpixel.com -
       www.freepik.es</a>
   </footer>

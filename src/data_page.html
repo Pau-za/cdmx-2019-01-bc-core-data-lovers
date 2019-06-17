@@ -7,67 +7,114 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Explora Paises</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="stylejson.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
   <header class="main" id="header">
     <nav>
-      <div class="nav">
-        <h1 id="name-page">FemData</h1>
-        <div id="burger" title="menú">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div>
-      <div id="header-buttons">
-        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
-        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
-          por país</a>
-        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
-          indicador</a>
-        <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
+      <div class="nav-wrapper  teal darken-3">
+        <a href="#" class="brand-logo right"> DataFem
+        </a>
+        <a href="#" class="sidenav-trigger" data-target="side-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+          </li>
+          <li>
+            <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+              por país</a>
+          </li>
+          <li>
+            <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+              id="indicator-start-header">Explorar datos por
+              indicador</a>
+          </li>
+        </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="side-menu">
+      <li>
+        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+          por país</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+          id="indicator-start-header">Explorar datos por
+          indicador</a>
+      </li>
+    </ul>
+
   </header>
-  
+
   <button id="button-to-top" title="Go to top">Subir</button>
-  
+
   <div id="women-pic">
-    <img src="./img_json/women_diversity.jpg" alt="women_diversity">
+    <img id="pic-women" src="./img_json/women_diversity_short.jpg" alt="empowered women">
   </div>
 
-  <section id="start-by-country">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var elems = document.querySelectorAll(".sidenav");
+      var instances = M.Sidenav.init(elems);
+    })
+
+  </script>
+
+  <section id="start-by-country" class="container center-align">
     <h4>Paises</h4>
     <p>Elige el país del que deseas cosultar información</p>
-    <button title="Brasil" class="country" value="BRA" name="Brasil">Brasil</button>
-    <button title="Chile" class="country" value="CHL" name="Chile">Chile</button>
-    <button title="México" class="country" value="MEX" name="México">México</button>
-    <button title="Perú" class="country" value="PER" name="Perú">Perú</button>
+    <button title="Brasil" class="country btn waves-effect waves-light deep-orange darken-3" value="BRA"
+      name="Brasil">Brasil</button>
+    <button title="Chile" class="country btn waves-effect waves-light deep-orange darken-3" value="CHL"
+      name="Chile">Chile</button>
+    <button title="México" class="country btn waves-effect waves-light  deep-orange darken-3" value="MEX"
+      name="México">México</button>
+    <button title="Perú" class="country btn waves-effect waves-light  deep-orange darken-3" value="PER"
+      name="Perú">Perú</button>
   </section>
 
-  <section id="select-indicator-type" class="hide">
+  <section id="select-indicator-type" class="invisible container center-align">
     <h4>Tipo de Indicador</h4>
     <p>Elige el indicador que deseas explorar</p>
-    <button class="type-of-indicator" id="education" value="educación"> Educación</button>
-    <button class="type-of-indicator" id="laboral" value="laboral"> Laboral</button>
-    <button class="type-of-indicator" id="demographic" value="población"> Demográfico </button>
+    <button class="type-of-indicator btn waves-effect waves-light  deep-orange darken-3" id="education"
+      value="educación"> Educación</button>
+    <button class="type-of-indicator btn waves-effect waves-light  deep-orange darken-3" id="laboral" value="laboral">
+      Laboral</button>
+    <button class="type-of-indicator btn waves-effect waves-light  deep-orange darken-3" id="demographic"
+      value="población"> Demográfico </button>
   </section>
 
-  <section id="choose-an-indicator" class="hide">
+  <section id="choose-an-indicator" class="invisible container center-align">
     <h4>Elige un indicador</h4>
-    <select id="indicator-select"> </select>
+    <div class="input-field col s12">
+      <select class="browser-default" id="indicator-select"> </select>
+
+    </div>
   </section>
 
-  <section id="indicator-information" class="hide">
+  <section id="indicator-information" class="invisible container center-align">
     <h4 id="country-selected"></h4>
     <h4 id="indicator-name-selected"></h4>
-    <!-- <button id="unselect" onclick="unselect()">Limpiar Selección</button> -->
     <div id="mean">
-      <button id="mean-button">Calcula el promedio</button>
+      <button id="mean-button" class="btn waves-effect waves-light  deep-orange darken-3">Calcula el promedio</button>
       <article id="mean-result"></article>
     </div>
     <div>

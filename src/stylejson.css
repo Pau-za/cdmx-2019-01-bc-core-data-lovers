@@ -1,5 +1,25 @@
+.invisible{
+  display: none;
+}
+
+#pic-women{
+  width: 100%;
+}
+
+#button-to-top{
+  display: none;
+}
+
+/* #select-indicator-type{
+  display: none;
+} */
+
+#indicator-select{
+  width: 80%;
+}
+
 /* Landscape phones and down */
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
   /* html {
       box-sizing: border-box;
@@ -54,9 +74,6 @@
     text-align: center;
   }
 
-  .hide {
-    display: none;
-  }
 
   .header {
     background-color: #005C74;
@@ -193,7 +210,5 @@
     /* Increase font size */
   }
 
-  #indicator-select{
-    width: 80%;
-  }
+  
 }
