@@ -9,17 +9,6 @@ fetch('./data/worldbank/worldbank.json').then(
   return wbData, dataPer;
 })
 
-//menú de hamburguesa
-const hamburguerButton = document.getElementById('burger');
-//función de botón de hamburguesa
-hamburguerButton.addEventListener('click', () => {
-  let menu = document.getElementById("header-buttons");
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
-})
 
 // FUNCIONES PARA EL DOCUMENTO DE LA EXPLORACIÓN DE LOS INDICADORES POR INDICADOR
 //después de que el usuario elije un indicador, aparece una gráfica indicando el porcentaje promedio

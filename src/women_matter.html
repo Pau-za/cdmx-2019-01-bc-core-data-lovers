@@ -8,46 +8,89 @@
   <title>Las Mujeres Importan</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" href="stylejson.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
   <header class="main" id="header">
     <nav>
-      <div class="nav">
-        <h1 id="name-page">FemData</h1>
-        <div id="burger" title="menú">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div>
-      <div id="header-buttons">
-        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
-        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
-          por país</a>
-        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header" id="indicator-start-header">Explorar datos por
-          indicador</a>
-        <a href="./index.html" title="Volver a Inicio" class="header" id="back-to-start">Volver a Inicio</a>
+      <div class="nav-wrapper  teal darken-3">
+        <a href="#" class="brand-logo right"> DataFem
+        </a>
+        <a href="#" class="sidenav-trigger" data-target="side-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="./index.html" title="Bienvenida" class="header" id="welcome">Inicio</a>
+          </li>
+          <li>
+            <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+          </li>
+          <li>
+            <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+              por país</a>
+          </li>
+          <li>
+            <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+              id="indicator-start-header">Explorar datos por
+              indicador</a>
+          </li>
+        </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="side-menu">
+      <li>
+        <a href="./index.html" title="Bienvenida" class="header" id="welcome">Inicio</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./women_matter.html" title="¿Por qué mujeres?" class="header" id="why-women">¿Por qué mujeres?</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./data_page.html" title="Explorar por País" class="header" id="country-start-header">Explorar datos
+          por país</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="./comienzo_por_indicadores.html" title="Explorar por Indicador" class="header"
+          id="indicator-start-header">Explorar datos por
+          indicador</a>
+      </li>
+    </ul>
   </header>
-  
-  <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
-  
-  <div>
-    <img src="./img_json/girl_power.jpg" alt="girl_power">
-  </div>
 
-  <section id="women-in-latam">
+  <button onclick="topFunction()" id="button-to-top" title="Go to top">Subir</button>
+
+  <div>
+    <img id="pic-women" src="./img_json/women_diversity_short.jpg" alt="empowered women">
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var elems = document.querySelectorAll(".sidenav");
+      var instances = M.Sidenav.init(elems);
+    })
+
+  </script>
+
+  <section id="women-in-latam" class="container center-align">
     <h1>¿Por qué hacer estudios sobre mujeres?</h1>
     <p>Los estudios sobre Mujeres comenzaron en la década de 1970, con el auge de la tercera ola del movimiento
       feminista. El propósito de dichos estudios, era dar a conocer las
       <a href="http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-66662009000300002">teorías
         feministas</a> hasta esa época. Las feministas de entonces estaban convencidas de que tenía que haber
       un mejor futuro para las mujeres a nivel Internacional en relación a los derechos reproductivos (¿o no?).</p>
-    
+
     <a href="https://www.freepik.es/fotos-vectores-gratis/acuarela">Vector de acuarela creado por freepik -
       www.freepik.es</a>
   </section>
